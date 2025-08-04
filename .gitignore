@@ -45,3 +45,5 @@ Thumbs.db
 
 # Version control
 .tool-versions
+vite.config.*.timestamp*
+vitest.config.*.timestamp*
