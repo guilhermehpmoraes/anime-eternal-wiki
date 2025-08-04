@@ -1,6 +1,9 @@
 packages:
-  - "packages/*"
-  - "apps/*"
+  - packages/*
+  - apps/*
+  - libs/*
+
 ignoredBuiltDependencies:
-  - "esbuild"
-  - "unrs-resolver"
+  - '@tailwindcss/oxide'
+  - esbuild
+  - unrs-resolver
