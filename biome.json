@@ -28,7 +28,6 @@
             },
             "style": {
                 "useImportType": "off",
-                "noDefaultExport": "error",
                 "noShoutyConstants": "warn",
                 "noYodaExpression": "error",
                 "useCollapsedElseIf": "error",

@@ -1,5 +1,6 @@
 {
-  "name": "@anime-eternal-wiki/web-client",
-  "version": "0.0.1",
-  "private": true
+    "name": "@anime-eternal-wiki/web-client",
+    "version": "0.0.1",
+    "private": true,
+    "type": "module"
 }
