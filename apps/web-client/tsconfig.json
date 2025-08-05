@@ -7,13 +7,17 @@
         },
         {
             "path": "../../libs/ui"
+        },
+        {
+            "path": "../../libs/utils"
         }
     ],
     "extends": "../../tsconfig.base.json",
     "compilerOptions": {
         "paths": {
             "@/*": ["./src/*"],
-            "@anime-eternal-wiki/ui": ["../../libs/ui"]
+            "@anime-eternal-wiki/ui": ["../../libs/ui/src/index.ts"],
+            "@anime-eternal-wiki/utils": ["../../libs/utils/src/index.ts"]
         }
     }
 }

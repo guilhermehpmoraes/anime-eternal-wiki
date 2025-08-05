@@ -2,7 +2,7 @@
 @import "tw-animate-css";
 
 @source "../src/**/*.{ts,tsx,js,jsx}";
-@source "../../../libs/ui/src/**/*.{ts,tsx,js,jsx}"
+@source "../../../libs/ui/src/**/*.{ts,tsx,js,jsx}";
 
 @custom-variant dark (&:is(.dark *));
 

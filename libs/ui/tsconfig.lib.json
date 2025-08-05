@@ -6,6 +6,8 @@
         "jsx": "react-jsx",
         "module": "esnext",
         "moduleResolution": "bundler",
+        "composite": false,
+        "declaration": true,
         "tsBuildInfoFile": "dist/tsconfig.lib.tsbuildinfo"
     },
     "exclude": [
@@ -21,9 +23,5 @@
         "**/*.test.jsx"
     ],
     "include": ["src/**/*.js", "src/**/*.jsx", "src/**/*.ts", "src/**/*.tsx"],
-    "references": [
-        {
-            "path": "../utils"
-        }
-    ]
+    "references": []
 }
