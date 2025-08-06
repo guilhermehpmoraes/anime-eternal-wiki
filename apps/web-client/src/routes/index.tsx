@@ -1,6 +1,6 @@
 import { Badge, Card, CardContent, CardDescription, CardHeader, CardTitle, Separator } from "@anime-eternal-wiki/ui";
 import { cn } from "@anime-eternal-wiki/utils";
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { Crown, Gem, Globe, MapPin, Shield, Sparkles, Sword, User } from "lucide-react";
 
 export const Route = createFileRoute("/")({
@@ -82,9 +82,7 @@ function Index() {
                 {/* Hero Section */}
                 <div className="text-center mb-16">
                     <div className="relative inline-block mb-6">
-                        <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-purple-400 via-pink-400 to-purple-400 bg-clip-text text-transparent animate-pulse">
-                            Anime Eternal
-                        </h1>
+                        <img src="/logo.png" alt="Anime Eternal Logo" className="w-128 mx-auto" />
                         <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg blur opacity-20 animate-pulse"></div>
                     </div>
                     <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
@@ -130,15 +128,6 @@ function Index() {
                                 </Card>
                             );
 
-                            // Only wrap with Link if the route exists
-                            if (module.id === "rank-up") {
-                                return (
-                                    <Link key={module.id} to="/rank-up">
-                                        {cardContent}
-                                    </Link>
-                                );
-                            }
-
                             return cardContent;
                         })}
                     </div>
@@ -172,8 +161,9 @@ function Index() {
             <footer className="border-t border-white/10 bg-black/20 backdrop-blur-xl mt-16">
                 <div className="container mx-auto px-4 py-8">
                     <div className="text-center text-gray-400">
-                        <p className="mb-2">© 2025 Anime Eternal Wiki. Made with ❤️ by the community.</p>
-                        <p className="text-sm">This is an unofficial community project.</p>
+                        <p className="mb-2">
+                            © 2025 Anime Eternal Wiki. Made with ❤️ by the community - @guilhermehpmoraes.
+                        </p>
                     </div>
                 </div>
             </footer>
