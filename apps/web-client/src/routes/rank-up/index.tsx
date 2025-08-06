@@ -2,7 +2,7 @@ import { Badge, Card, CardContent, CardDescription, CardHeader, CardTitle, Separ
 import { createFileRoute } from "@tanstack/react-router";
 import { Crown, Gem, Star, Target, Trophy, Zap } from "lucide-react";
 
-export const Route = createFileRoute("/rank-up")({
+export const Route = createFileRoute("/rank-up/")({
     component: RankUp,
 });
 

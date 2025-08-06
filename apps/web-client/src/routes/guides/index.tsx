@@ -2,7 +2,7 @@ import { Badge, Card, CardContent, CardDescription, CardHeader, CardTitle } from
 import { createFileRoute } from "@tanstack/react-router";
 import { BookOpen, Target, Users, Zap } from "lucide-react";
 
-export const Route = createFileRoute("/guides")({
+export const Route = createFileRoute("/guides/")({
     component: Guides,
 });
 
