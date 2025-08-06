@@ -1,16 +1,7 @@
-import {
-    Badge,
-    Button,
-    Card,
-    CardContent,
-    CardDescription,
-    CardHeader,
-    CardTitle,
-    Separator,
-} from "@anime-eternal-wiki/ui";
+import { Badge, Card, CardContent, CardDescription, CardHeader, CardTitle, Separator } from "@anime-eternal-wiki/ui";
 import { cn } from "@anime-eternal-wiki/utils";
-import { createFileRoute } from "@tanstack/react-router";
-import { Crown, Gem, Globe, Home, MapPin, Menu, Search, Shield, Sparkles, Sword, User } from "lucide-react";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { Crown, Gem, Globe, MapPin, Shield, Sparkles, Sword, User } from "lucide-react";
 
 export const Route = createFileRoute("/")({
     component: Index,
@@ -85,60 +76,7 @@ function Index() {
     ];
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
-            {/* Header */}
-            <header className="border-b border-white/10 bg-black/20 backdrop-blur-xl">
-                <div className="container mx-auto px-4 py-4">
-                    <div className="flex items-center justify-between">
-                        {/* Logo */}
-                        <div className="flex items-center space-x-3">
-                            <div className="relative">
-                                <div className="w-10 h-10 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center">
-                                    <Home className="w-6 h-6 text-white" />
-                                </div>
-                                <div className="absolute -top-1 -right-1 w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
-                            </div>
-                            <div>
-                                <h1 className="text-xl font-bold text-white">Anime Eternal</h1>
-                                <p className="text-xs text-gray-400">Wiki & Guide</p>
-                            </div>
-                        </div>
-
-                        {/* Navigation */}
-                        <nav className="hidden md:flex items-center space-x-6">
-                            <Button variant="ghost" className="text-gray-300 hover:text-white">
-                                Home
-                            </Button>
-                            <Button variant="ghost" className="text-gray-300 hover:text-white">
-                                Guides
-                            </Button>
-                            <Button variant="ghost" className="text-gray-300 hover:text-white">
-                                Community
-                            </Button>
-                            <Button variant="ghost" className="text-gray-300 hover:text-white">
-                                Updates
-                            </Button>
-                        </nav>
-
-                        {/* Search & Menu */}
-                        <div className="flex items-center space-x-3">
-                            <Button
-                                variant="outline"
-                                size="icon"
-                                className="border-white/20 bg-white/5 hover:bg-white/10">
-                                <Search className="w-4 h-4" />
-                            </Button>
-                            <Button
-                                variant="outline"
-                                size="icon"
-                                className="border-white/20 bg-white/5 hover:bg-white/10 md:hidden">
-                                <Menu className="w-4 h-4" />
-                            </Button>
-                        </div>
-                    </div>
-                </div>
-            </header>
-
+        <>
             {/* Main Content */}
             <main className="container mx-auto px-4 py-12">
                 {/* Hero Section */}
@@ -168,7 +106,7 @@ function Index() {
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                         {modules.map((module) => {
                             const IconComponent = module.icon;
-                            return (
+                            const cardContent = (
                                 <Card
                                     key={module.id}
                                     className="group bg-white/5 border-white/10 hover:bg-white/10 transition-all duration-300 cursor-pointer hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/25">
@@ -191,6 +129,17 @@ function Index() {
                                     </CardContent>
                                 </Card>
                             );
+
+                            // Only wrap with Link if the route exists
+                            if (module.id === "rank-up") {
+                                return (
+                                    <Link key={module.id} to="/rank-up">
+                                        {cardContent}
+                                    </Link>
+                                );
+                            }
+
+                            return cardContent;
                         })}
                     </div>
                 </div>
@@ -228,6 +177,6 @@ function Index() {
                     </div>
                 </div>
             </footer>
-        </div>
+        </>
     );
 }
