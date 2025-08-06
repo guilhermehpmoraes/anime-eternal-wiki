@@ -1,11 +1,7 @@
 {
     "version": 2,
-    "builds": [
-        {
-            "src": "apps/web-client/package.json",
-            "use": "@vercel/static-build"
-        }
-    ],
+    "buildCommand": "pnpx nx build web-client",
+    "outputDirectory": "apps/web-client/dist",
     "routes": [
         {
             "src": "/(.*)",
