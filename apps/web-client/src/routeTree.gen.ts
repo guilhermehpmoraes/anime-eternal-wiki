@@ -9,55 +9,58 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as RankUpIndexRouteImport } from './routes/rank-up/index'
+import { Route as GuidesIndexRouteImport } from './routes/guides/index'
 
-const AboutRoute = AboutRouteImport.update({
-  id: '/about',
-  path: '/about',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const RankUpIndexRoute = RankUpIndexRouteImport.update({
+  id: '/rank-up/',
+  path: '/rank-up/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GuidesIndexRoute = GuidesIndexRouteImport.update({
+  id: '/guides/',
+  path: '/guides/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/about': typeof AboutRoute
+  '/guides': typeof GuidesIndexRoute
+  '/rank-up': typeof RankUpIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/about': typeof AboutRoute
+  '/guides': typeof GuidesIndexRoute
+  '/rank-up': typeof RankUpIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/about': typeof AboutRoute
+  '/guides/': typeof GuidesIndexRoute
+  '/rank-up/': typeof RankUpIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about'
+  fullPaths: '/' | '/guides' | '/rank-up'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about'
-  id: '__root__' | '/' | '/about'
+  to: '/' | '/guides' | '/rank-up'
+  id: '__root__' | '/' | '/guides/' | '/rank-up/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  AboutRoute: typeof AboutRoute
+  GuidesIndexRoute: typeof GuidesIndexRoute
+  RankUpIndexRoute: typeof RankUpIndexRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/about': {
-      id: '/about'
-      path: '/about'
-      fullPath: '/about'
-      preLoaderRoute: typeof AboutRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/': {
       id: '/'
       path: '/'
@@ -65,12 +68,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/rank-up/': {
+      id: '/rank-up/'
+      path: '/rank-up'
+      fullPath: '/rank-up'
+      preLoaderRoute: typeof RankUpIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/guides/': {
+      id: '/guides/'
+      path: '/guides'
+      fullPath: '/guides'
+      preLoaderRoute: typeof GuidesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  AboutRoute: AboutRoute,
+  GuidesIndexRoute: GuidesIndexRoute,
+  RankUpIndexRoute: RankUpIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
