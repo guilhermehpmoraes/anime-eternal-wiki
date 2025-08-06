@@ -9,10 +9,16 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SplatRouteImport } from './routes/$splat'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as RankUpIndexRouteImport } from './routes/rank-up/index'
 import { Route as GuidesIndexRouteImport } from './routes/guides/index'
 
+const SplatRoute = SplatRouteImport.update({
+  id: '/$splat',
+  path: '/$splat',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -31,36 +37,47 @@ const GuidesIndexRoute = GuidesIndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/$splat': typeof SplatRoute
   '/guides': typeof GuidesIndexRoute
   '/rank-up': typeof RankUpIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/$splat': typeof SplatRoute
   '/guides': typeof GuidesIndexRoute
   '/rank-up': typeof RankUpIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/$splat': typeof SplatRoute
   '/guides/': typeof GuidesIndexRoute
   '/rank-up/': typeof RankUpIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/guides' | '/rank-up'
+  fullPaths: '/' | '/$splat' | '/guides' | '/rank-up'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/guides' | '/rank-up'
-  id: '__root__' | '/' | '/guides/' | '/rank-up/'
+  to: '/' | '/$splat' | '/guides' | '/rank-up'
+  id: '__root__' | '/' | '/$splat' | '/guides/' | '/rank-up/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  SplatRoute: typeof SplatRoute
   GuidesIndexRoute: typeof GuidesIndexRoute
   RankUpIndexRoute: typeof RankUpIndexRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/$splat': {
+      id: '/$splat'
+      path: '/$splat'
+      fullPath: '/$splat'
+      preLoaderRoute: typeof SplatRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -87,6 +104,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  SplatRoute: SplatRoute,
   GuidesIndexRoute: GuidesIndexRoute,
   RankUpIndexRoute: RankUpIndexRoute,
 }
