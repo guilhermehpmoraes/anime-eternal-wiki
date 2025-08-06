@@ -1,7 +1,7 @@
 {
     "version": 2,
     "buildCommand": "pnpx nx build web-client",
-    "outputDirectory": "apps/web-client/dist",
+    "outputDirectory": "dist",
     "routes": [
         {
             "src": "/(.*)",
