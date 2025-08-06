@@ -1,0 +1,11 @@
+{
+    "version": 2,
+    "buildCommand": "pnpx nx build web-client",
+    "outputDirectory": "dist",
+    "routes": [
+        {
+            "src": "/(.*)",
+            "dest": "/index.html"
+        }
+    ]
+}
