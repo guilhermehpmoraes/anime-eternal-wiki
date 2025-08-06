@@ -42,11 +42,9 @@ function RootComponent() {
                                     Home
                                 </Button>
                             </Link>
-                            <Link to="/guides">
-                                <Button variant="ghost" className="text-gray-300 hover:text-white">
-                                    Guides
-                                </Button>
-                            </Link>
+                            <Button variant="ghost" className="text-gray-300 hover:text-white">
+                                Guides
+                            </Button>
                             <Button variant="ghost" className="text-gray-300 hover:text-white">
                                 Community
                             </Button>
