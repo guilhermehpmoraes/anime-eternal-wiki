@@ -1,6 +1,6 @@
 import { Badge, Card, CardContent, CardDescription, CardHeader, CardTitle, Separator } from "@anime-eternal-wiki/ui";
 import { cn } from "@anime-eternal-wiki/utils";
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { Crown, Gem, Globe, MapPin, Shield, Sparkles, Sword, User } from "lucide-react";
 import wikiData from "../data/wiki-data.json";
 
@@ -54,7 +54,7 @@ function Index() {
                             .filter((module) => module.enabled)
                             .map((module) => {
                                 const IconComponent = iconMap[module.icon as keyof typeof iconMap];
-                                return (
+                                const cardContent = (
                                     <Card
                                         key={module.id}
                                         className="group bg-white/5 border-white/10 hover:bg-white/10 transition-all duration-300 cursor-pointer hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/25">
@@ -77,6 +77,16 @@ function Index() {
                                         </CardContent>
                                     </Card>
                                 );
+
+                                if (module.id === "rank-up") {
+                                    return (
+                                        <Link key={module.id} to={module.href}>
+                                            {cardContent}
+                                        </Link>
+                                    );
+                                }
+
+                                return cardContent;
                             })}
                     </div>
                 </div>
