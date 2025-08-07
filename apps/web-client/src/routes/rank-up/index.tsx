@@ -1,6 +1,7 @@
 import { Badge, Card, CardContent, CardDescription, CardHeader, CardTitle } from "@anime-eternal-wiki/ui";
 import { createFileRoute } from "@tanstack/react-router";
-import { ArrowBigUp, ArrowUp, Crown, TrendingUp, Zap } from "lucide-react";
+import { ArrowBigUp, ArrowDown, ArrowUp, Crown, TrendingUp, Zap } from "lucide-react";
+import { useState } from "react";
 import wikiData from "../../data/wiki-data.json";
 
 export const Route = createFileRoute("/rank-up/")({
@@ -10,7 +11,27 @@ export const Route = createFileRoute("/rank-up/")({
 function RankUp() {
     // Busca os dados do módulo rank-up
     const rankUpModule = wikiData.modules.find((module) => module.id === "rank-up");
-    const ranks = rankUpModule?.data?.ranks || [];
+    const originalRanks = rankUpModule?.data?.ranks || [];
+
+    // Estado para controlar a ordenação
+    const [sortOrder, setSortOrder] = useState<"asc" | "desc">("asc");
+
+    // Aplica a ordenação baseada no estado atual
+    const ranks = [...originalRanks].sort((a, b) => {
+        if (sortOrder === "asc") {
+            return a.currentRank - b.currentRank;
+        } else {
+            return b.currentRank - a.currentRank;
+        }
+    });
+
+    // Função para alternar a ordenação
+    const toggleSort = () => {
+        setSortOrder(sortOrder === "asc" ? "desc" : "asc");
+    };
+
+    // Sempre usa o último rank do array original para stats (rank máximo)
+    const maxRank = originalRanks[originalRanks.length - 1];
 
     return (
         <main className="container mx-auto px-4 py-12">
@@ -38,7 +59,7 @@ function RankUp() {
                         </div>
                         <CardTitle className="text-white text-lg">Max Rank</CardTitle>
                         <CardDescription className="text-gray-400 text-2xl font-bold">
-                            {ranks[ranks.length - 1]?.currentRank || 0}
+                            {maxRank?.currentRank || 0}
                         </CardDescription>
                     </CardHeader>
                 </Card>
@@ -50,7 +71,7 @@ function RankUp() {
                         </div>
                         <CardTitle className="text-white text-lg">Max Energy Multiplier</CardTitle>
                         <CardDescription className="text-gray-400 text-2xl font-bold">
-                            {ranks[ranks.length - 1]?.energyMultiplier || "0x"}
+                            {maxRank?.energyMultiplier || "0x"}
                         </CardDescription>
                     </CardHeader>
                 </Card>
@@ -62,7 +83,7 @@ function RankUp() {
                         </div>
                         <CardTitle className="text-white text-lg">Final Requirement</CardTitle>
                         <CardDescription className="text-gray-400 text-2xl font-bold">
-                            {ranks[ranks.length - 1]?.requirement || "0"}
+                            {maxRank?.requirement || "0"}
                         </CardDescription>
                     </CardHeader>
                 </Card>
@@ -80,7 +101,20 @@ function RankUp() {
 
                 {/* Table Header */}
                 <div className="grid grid-cols-3 gap-4 p-4 bg-white/5 border-b border-white/10">
-                    <div className="text-white font-semibold text-sm uppercase tracking-wide">Current Rank</div>
+                    <div className="flex items-center gap-2">
+                        <span className="text-white font-semibold text-sm uppercase tracking-wide">Current Rank</span>
+                        <button
+                            type="button"
+                            onClick={toggleSort}
+                            className="p-1 hover:bg-white/10 rounded transition-colors"
+                            title={`Sort ${sortOrder === "asc" ? "Descending" : "Ascending"}`}>
+                            {sortOrder === "asc" ? (
+                                <ArrowUp className="w-4 h-4 text-blue-400" />
+                            ) : (
+                                <ArrowDown className="w-4 h-4 text-blue-400" />
+                            )}
+                        </button>
+                    </div>
                     <div className="text-white font-semibold text-sm uppercase tracking-wide">Requirement</div>
                     <div className="text-white font-semibold text-sm uppercase tracking-wide">Energy Multiplier</div>
                 </div>
