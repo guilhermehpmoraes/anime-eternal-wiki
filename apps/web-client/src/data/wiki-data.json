@@ -576,7 +576,549 @@
             "icon": "globe",
             "color": "from-indigo-500 to-blue-600",
             "href": "/worlds",
-            "enabled": false
+            "enabled": false,
+            "data": {
+                "worlds": [
+                    {
+                        "id": 1,
+                        "name": "Earth City",
+                        "avatars": [
+                            {
+                                "name": "Kriluni",
+                                "rarity": "Common",
+                                "baseEnergy": 3
+                            },
+                            {
+                                "name": "Ymicha",
+                                "rarity": "Uncommon",
+                                "baseEnergy": 6
+                            },
+                            {
+                                "name": "Tian Shan",
+                                "rarity": "Rare",
+                                "baseEnergy": 9
+                            },
+                            {
+                                "name": "Kohan",
+                                "rarity": "Epic",
+                                "baseEnergy": 12
+                            },
+                            {
+                                "name": "Picco",
+                                "rarity": "Legendary",
+                                "baseEnergy": 15
+                            },
+                            {
+                                "name": "Koku",
+                                "rarity": "Mythical",
+                                "baseEnergy": 20
+                            },
+                            {
+                                "name": "Kid Kohan",
+                                "rarity": "Phantom",
+                                "baseEnergy": 60
+                            }
+                        ]
+                    },
+                    {
+                        "id": 2,
+                        "name": "Windmill Island",
+                        "avatars": [
+                            {
+                                "name": "Nomi",
+                                "rarity": "Common",
+                                "baseEnergy": 8
+                            },
+                            {
+                                "name": "Usup",
+                                "rarity": "Uncommon",
+                                "baseEnergy": 15
+                            },
+                            {
+                                "name": "Robins",
+                                "rarity": "Rare",
+                                "baseEnergy": 23
+                            },
+                            {
+                                "name": "Senji",
+                                "rarity": "Epic",
+                                "baseEnergy": 30
+                            },
+                            {
+                                "name": "Zaro",
+                                "rarity": "Legendary",
+                                "baseEnergy": 38
+                            },
+                            {
+                                "name": "Loffy",
+                                "rarity": "Mythical",
+                                "baseEnergy": 50
+                            },
+                            {
+                                "name": "Shanks",
+                                "rarity": "Phantom",
+                                "baseEnergy": 150
+                            }
+                        ]
+                    },
+                    {
+                        "id": 3,
+                        "name": "Soul Society",
+                        "avatars": [
+                            {
+                                "name": "Hime",
+                                "rarity": "Common",
+                                "baseEnergy": 19
+                            },
+                            {
+                                "name": "Ichige",
+                                "rarity": "Uncommon",
+                                "baseEnergy": 38
+                            },
+                            {
+                                "name": "Uryua",
+                                "rarity": "Rare",
+                                "baseEnergy": 56
+                            },
+                            {
+                                "name": "Rakiu",
+                                "rarity": "Epic",
+                                "baseEnergy": 75
+                            },
+                            {
+                                "name": "Yoichi",
+                                "rarity": "Legendary",
+                                "baseEnergy": 94
+                            },
+                            {
+                                "name": "Kahara",
+                                "rarity": "Mythical",
+                                "baseEnergy": 125
+                            },
+                            {
+                                "name": "Eizen",
+                                "rarity": "Phantom",
+                                "baseEnergy": 375
+                            }
+                        ]
+                    },
+                    {
+                        "id": 4,
+                        "name": "Cursed School",
+                        "avatars": [
+                            {
+                                "name": "Itodo",
+                                "rarity": "Common",
+                                "baseEnergy": 47
+                            },
+                            {
+                                "name": "Nebara",
+                                "rarity": "Uncommon",
+                                "baseEnergy": 94
+                            },
+                            {
+                                "name": "Magum",
+                                "rarity": "Rare",
+                                "baseEnergy": 141
+                            },
+                            {
+                                "name": "Meki",
+                                "rarity": "Epic",
+                                "baseEnergy": 188
+                            },
+                            {
+                                "name": "Tage",
+                                "rarity": "Legendary",
+                                "baseEnergy": 234
+                            },
+                            {
+                                "name": "Gajo",
+                                "rarity": "Mythical",
+                                "baseEnergy": 313
+                            },
+                            {
+                                "name": "Sakuni",
+                                "rarity": "Phantom",
+                                "baseEnergy": 938
+                            }
+                        ]
+                    },
+                    {
+                        "id": 5,
+                        "name": "Slayer Village",
+                        "avatars": [
+                            {
+                                "name": "Nazuki",
+                                "rarity": "Common",
+                                "baseEnergy": 117
+                            },
+                            {
+                                "name": "Tenjaro",
+                                "rarity": "Uncommon",
+                                "baseEnergy": 234
+                            },
+                            {
+                                "name": "Zentsu",
+                                "rarity": "Rare",
+                                "baseEnergy": 352
+                            },
+                            {
+                                "name": "Insake",
+                                "rarity": "Epic",
+                                "baseEnergy": 469
+                            },
+                            {
+                                "name": "Tamoka",
+                                "rarity": "Legendary",
+                                "baseEnergy": 586
+                            },
+                            {
+                                "name": "Shinabe",
+                                "rarity": "Mythical",
+                                "baseEnergy": 781
+                            },
+                            {
+                                "name": "Rangaki",
+                                "rarity": "Phantom",
+                                "baseEnergy": 2344
+                            }
+                        ]
+                    },
+                    {
+                        "id": 6,
+                        "name": "Solo Island",
+                        "avatars": [
+                            {
+                                "name": "Weak Sun",
+                                "rarity": "Common",
+                                "baseEnergy": 293
+                            },
+                            {
+                                "name": "Green Goblin",
+                                "rarity": "Uncommon",
+                                "baseEnergy": 586
+                            },
+                            {
+                                "name": "White Tiger",
+                                "rarity": "Rare",
+                                "baseEnergy": 879
+                            },
+                            {
+                                "name": "Cha",
+                                "rarity": "Epic",
+                                "baseEnergy": 1172
+                            },
+                            {
+                                "name": "Choi",
+                                "rarity": "Legendary",
+                                "baseEnergy": 1465
+                            },
+                            {
+                                "name": "Solo Sung",
+                                "rarity": "Mythical",
+                                "baseEnergy": 1953
+                            },
+                            {
+                                "name": "Statue of God",
+                                "rarity": "Phantom",
+                                "baseEnergy": 5859
+                            }
+                        ]
+                    },
+                    {
+                        "id": 7,
+                        "name": "Clover Village",
+                        "avatars": [
+                            {
+                                "name": "Noalle",
+                                "rarity": "Common",
+                                "baseEnergy": 732
+                            },
+                            {
+                                "name": "Megna",
+                                "rarity": "Uncommon",
+                                "baseEnergy": 1465
+                            },
+                            {
+                                "name": "Finrel",
+                                "rarity": "Rare",
+                                "baseEnergy": 2197
+                            },
+                            {
+                                "name": "Aste",
+                                "rarity": "Epic",
+                                "baseEnergy": 2930
+                            },
+                            {
+                                "name": "Yune",
+                                "rarity": "Legendary",
+                                "baseEnergy": 3662
+                            },
+                            {
+                                "name": "Yemi",
+                                "rarity": "Mythical",
+                                "baseEnergy": 4883
+                            },
+                            {
+                                "name": "Novi Chroni",
+                                "rarity": "Phantom",
+                                "baseEnergy": 14648
+                            }
+                        ]
+                    },
+                    {
+                        "id": 8,
+                        "name": "Leaf Village",
+                        "avatars": [
+                            {
+                                "name": "Sekuri",
+                                "rarity": "Common",
+                                "baseEnergy": 1831
+                            },
+                            {
+                                "name": "Kid Norto",
+                                "rarity": "Uncommon",
+                                "baseEnergy": 3662
+                            },
+                            {
+                                "name": "Kid Seske",
+                                "rarity": "Rare",
+                                "baseEnergy": 5493
+                            },
+                            {
+                                "name": "Kakashki",
+                                "rarity": "Epic",
+                                "baseEnergy": 7324
+                            },
+                            {
+                                "name": "Jiria",
+                                "rarity": "Legendary",
+                                "baseEnergy": 9155
+                            },
+                            {
+                                "name": "Tsuni",
+                                "rarity": "Mythical",
+                                "baseEnergy": 12207
+                            },
+                            {
+                                "name": "Itechi",
+                                "rarity": "Phantom",
+                                "baseEnergy": 36621
+                            },
+                            {
+                                "name": "Madera",
+                                "rarity": "Phantom",
+                                "baseEnergy": 40283
+                            }
+                        ]
+                    },
+                    {
+                        "id": 9,
+                        "name": "Spirit Residence",
+                        "avatars": [
+                            {
+                                "name": "Ken",
+                                "rarity": "Common",
+                                "baseEnergy": 4578
+                            },
+                            {
+                                "name": "Aira",
+                                "rarity": "Uncommon",
+                                "baseEnergy": 9155
+                            },
+                            {
+                                "name": "Jiji",
+                                "rarity": "Rare",
+                                "baseEnergy": 13733
+                            },
+                            {
+                                "name": "Momo",
+                                "rarity": "Epic",
+                                "baseEnergy": 18311
+                            },
+                            {
+                                "name": "Alien",
+                                "rarity": "Legendary",
+                                "baseEnergy": 22888
+                            },
+                            {
+                                "name": "Saiko",
+                                "rarity": "Mythical",
+                                "baseEnergy": 30518
+                            },
+                            {
+                                "name": "Ken Turbo",
+                                "rarity": "Phantom",
+                                "baseEnergy": 91553
+                            }
+                        ]
+                    },
+                    {
+                        "id": 10,
+                        "name": "Magic Hunter City",
+                        "avatars": [
+                            {
+                                "name": "Lero",
+                                "rarity": "Common",
+                                "baseEnergy": 11444
+                            },
+                            {
+                                "name": "Gone",
+                                "rarity": "Uncommon",
+                                "baseEnergy": 22888
+                            },
+                            {
+                                "name": "Karapik",
+                                "rarity": "Rare",
+                                "baseEnergy": 34332
+                            },
+                            {
+                                "name": "Killas",
+                                "rarity": "Epic",
+                                "baseEnergy": 45776
+                            },
+                            {
+                                "name": "Hisoker",
+                                "rarity": "Legendary",
+                                "baseEnergy": 57220
+                            },
+                            {
+                                "name": "Illumio",
+                                "rarity": "Mythical",
+                                "baseEnergy": 76294
+                            },
+                            {
+                                "name": "Killas Godspeed",
+                                "rarity": "Phantom",
+                                "baseEnergy": 228882
+                            }
+                        ]
+                    },
+                    {
+                        "id": 11,
+                        "name": "Titan City",
+                        "avatars": [
+                            {
+                                "name": "Armin",
+                                "rarity": "Common",
+                                "baseEnergy": 28610
+                            },
+                            {
+                                "name": "Annie",
+                                "rarity": "Uncommon",
+                                "baseEnergy": 57220
+                            },
+                            {
+                                "name": "Mikala",
+                                "rarity": "Rare",
+                                "baseEnergy": 85830
+                            },
+                            {
+                                "name": "Rainar",
+                                "rarity": "Epic",
+                                "baseEnergy": 114441
+                            },
+                            {
+                                "name": "Ervin",
+                                "rarity": "Legendary",
+                                "baseEnergy": 143051
+                            },
+                            {
+                                "name": "Lavi",
+                                "rarity": "Mythical",
+                                "baseEnergy": 190735
+                            },
+                            {
+                                "name": "Eran",
+                                "rarity": "Phantom",
+                                "baseEnergy": 575000
+                            }
+                        ]
+                    },
+                    {
+                        "id": 12,
+                        "name": "Sin City",
+                        "avatars": [
+                            {
+                                "name": "Diyana",
+                                "rarity": "Common",
+                                "baseEnergy": 71526
+                            },
+                            {
+                                "name": "Kyng",
+                                "rarity": "Uncommon",
+                                "baseEnergy": 143051
+                            },
+                            {
+                                "name": "Gowen",
+                                "rarity": "Rare",
+                                "baseEnergy": 214577
+                            },
+                            {
+                                "name": "Merlu",
+                                "rarity": "Epic",
+                                "baseEnergy": 286102
+                            },
+                            {
+                                "name": "Bane",
+                                "rarity": "Legendary",
+                                "baseEnergy": 357628
+                            },
+                            {
+                                "name": "Melyon",
+                                "rarity": "Mythical",
+                                "baseEnergy": 476837
+                            },
+                            {
+                                "name": "Escanor",
+                                "rarity": "Phantom",
+                                "baseEnergy": 1437500
+                            }
+                        ]
+                    },
+                    {
+                        "id": 13,
+                        "name": "Kaiju Base",
+                        "avatars": [
+                            {
+                                "name": "Kefka",
+                                "rarity": "Common",
+                                "baseEnergy": 178814
+                            },
+                            {
+                                "name": "Rano",
+                                "rarity": "Uncommon",
+                                "baseEnergy": 357628
+                            },
+                            {
+                                "name": "Ihero",
+                                "rarity": "Rare",
+                                "baseEnergy": 536442
+                            },
+                            {
+                                "name": "Kikoi",
+                                "rarity": "Epic",
+                                "baseEnergy": 715256
+                            },
+                            {
+                                "name": "Sosiro",
+                                "rarity": "Legendary",
+                                "baseEnergy": 894070
+                            },
+                            {
+                                "name": "Meena",
+                                "rarity": "Mythical",
+                                "baseEnergy": 1192093
+                            },
+                            {
+                                "name": "Number 8",
+                                "rarity": "Phantom",
+                                "baseEnergy": 3593750
+                            }
+                        ]
+                    }
+                ]
+            }
         },
         {
             "id": "auras",
@@ -594,6 +1136,15 @@
             "icon": "sword",
             "color": "from-orange-500 to-red-600",
             "href": "/weapons",
+            "enabled": false
+        },
+        {
+            "id": "level",
+            "title": "Leveling",
+            "description": "Leveling system",
+            "icon": "level",
+            "color": "from-green-500 to-blue-600",
+            "href": "/level",
             "enabled": false
         }
     ]

@@ -18,6 +18,7 @@ const iconMap = {
     globe: Globe,
     sparkles: Sparkles,
     sword: Sword,
+    level: Sparkles,
 } as const;
 
 function Index() {
