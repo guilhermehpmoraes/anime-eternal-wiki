@@ -86,6 +86,14 @@ function Index() {
                                     );
                                 }
 
+                                if (module.id === "avatar") {
+                                    return (
+                                        <Link key={module.id} to={module.href}>
+                                            {cardContent}
+                                        </Link>
+                                    );
+                                }
+
                                 return cardContent;
                             })}
                     </div>

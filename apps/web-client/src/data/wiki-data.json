@@ -534,12 +534,12 @@
             }
         },
         {
-            "id": "avatar-index",
-            "title": "Avatar Index",
+            "id": "avatar",
+            "title": "Avatar",
             "description": "Complete avatar catalog",
             "icon": "user",
             "color": "from-blue-500 to-cyan-600",
-            "href": "/avatars",
+            "href": "/avatar",
             "enabled": true
         },
         {
@@ -549,7 +549,7 @@
             "icon": "shield",
             "color": "from-red-500 to-pink-600",
             "href": "/champions",
-            "enabled": true
+            "enabled": false
         },
         {
             "id": "dungeons",
@@ -558,7 +558,7 @@
             "icon": "mapPin",
             "color": "from-purple-500 to-violet-600",
             "href": "/dungeons",
-            "enabled": true
+            "enabled": false
         },
         {
             "id": "jewelry",
@@ -567,7 +567,7 @@
             "icon": "gem",
             "color": "from-emerald-500 to-teal-600",
             "href": "/jewelry",
-            "enabled": true
+            "enabled": false
         },
         {
             "id": "worlds",
@@ -576,7 +576,7 @@
             "icon": "globe",
             "color": "from-indigo-500 to-blue-600",
             "href": "/worlds",
-            "enabled": true
+            "enabled": false
         },
         {
             "id": "auras",
@@ -585,7 +585,7 @@
             "icon": "sparkles",
             "color": "from-pink-500 to-rose-600",
             "href": "/auras",
-            "enabled": true
+            "enabled": false
         },
         {
             "id": "weapons",
@@ -594,7 +594,7 @@
             "icon": "sword",
             "color": "from-orange-500 to-red-600",
             "href": "/weapons",
-            "enabled": true
+            "enabled": false
         }
     ]
 }
