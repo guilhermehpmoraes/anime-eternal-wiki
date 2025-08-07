@@ -1,0 +1,600 @@
+{
+    "modules": [
+        {
+            "id": "rank-up",
+            "title": "Rank Up",
+            "description": "Progression system and rankings",
+            "icon": "crown",
+            "color": "from-yellow-500 to-amber-600",
+            "href": "/rank-up",
+            "enabled": true,
+            "data": {
+                "ranks": [
+                    {
+                        "currentRank": 1,
+                        "nextRank": 2,
+                        "requirement": "9.00K",
+                        "requirementExact": 9000,
+                        "energyMultiplier": "1.0",
+                        "energyMultiplierExact": 1.0
+                    },
+                    {
+                        "currentRank": 2,
+                        "nextRank": 3,
+                        "requirement": "245.00K",
+                        "requirementExact": 245000,
+                        "energyMultiplier": "2.0",
+                        "energyMultiplierExact": 2.0
+                    },
+                    {
+                        "currentRank": 3,
+                        "nextRank": 4,
+                        "requirement": "1.30M",
+                        "requirementExact": 1300000,
+                        "energyMultiplier": "4.0",
+                        "energyMultiplierExact": 4.0
+                    },
+                    {
+                        "currentRank": 4,
+                        "nextRank": 5,
+                        "requirement": "3.70M",
+                        "requirementExact": 3700000,
+                        "energyMultiplier": "8.0",
+                        "energyMultiplierExact": 8.0
+                    },
+                    {
+                        "currentRank": 5,
+                        "nextRank": 6,
+                        "requirement": "13.6M",
+                        "requirementExact": 13600000,
+                        "energyMultiplier": "16.0",
+                        "energyMultiplierExact": 16.0
+                    },
+                    {
+                        "currentRank": 6,
+                        "nextRank": 7,
+                        "requirement": "500.00M",
+                        "requirementExact": 500000000,
+                        "energyMultiplier": "32.0",
+                        "energyMultiplierExact": 32.0
+                    },
+                    {
+                        "currentRank": 7,
+                        "nextRank": 8,
+                        "requirement": "1.10B",
+                        "requirementExact": 1100000000,
+                        "energyMultiplier": "64.0",
+                        "energyMultiplierExact": 64.0
+                    },
+                    {
+                        "currentRank": 8,
+                        "nextRank": 9,
+                        "requirement": "13.00B",
+                        "requirementExact": 13000000000,
+                        "energyMultiplier": "128.0",
+                        "energyMultiplierExact": 128.0
+                    },
+                    {
+                        "currentRank": 9,
+                        "nextRank": 10,
+                        "requirement": "27.00B",
+                        "requirementExact": 27000000000,
+                        "energyMultiplier": "256.0",
+                        "energyMultiplierExact": 256.0
+                    },
+                    {
+                        "currentRank": 10,
+                        "nextRank": 11,
+                        "requirement": "350.00B",
+                        "requirementExact": 350000000000,
+                        "energyMultiplier": "512.0",
+                        "energyMultiplierExact": 512.0
+                    },
+                    {
+                        "currentRank": 11,
+                        "nextRank": 12,
+                        "requirement": "825.00B",
+                        "requirementExact": 825000000000,
+                        "energyMultiplier": "1.02K",
+                        "energyMultiplierExact": 1024.0
+                    },
+                    {
+                        "currentRank": 12,
+                        "nextRank": 13,
+                        "requirement": "1.47T",
+                        "requirementExact": 1470000000000,
+                        "energyMultiplier": "2.05K",
+                        "energyMultiplierExact": 2048.0
+                    },
+                    {
+                        "currentRank": 13,
+                        "nextRank": 14,
+                        "requirement": "3.9T",
+                        "requirementExact": 3900000000000,
+                        "energyMultiplier": "4.10K",
+                        "energyMultiplierExact": 4096.0
+                    },
+                    {
+                        "currentRank": 14,
+                        "nextRank": 15,
+                        "requirement": "22.5T",
+                        "requirementExact": 22500000000000,
+                        "energyMultiplier": "8.19K",
+                        "energyMultiplierExact": 8192.0
+                    },
+                    {
+                        "currentRank": 15,
+                        "nextRank": 16,
+                        "requirement": "211.00T",
+                        "requirementExact": 211000000000000,
+                        "energyMultiplier": "16.38K",
+                        "energyMultiplierExact": 16384.0
+                    },
+                    {
+                        "currentRank": 16,
+                        "nextRank": 17,
+                        "requirement": "2.99qd",
+                        "requirementExact": 2990000000000000,
+                        "energyMultiplier": "32.77K",
+                        "energyMultiplierExact": 32768.0
+                    },
+                    {
+                        "currentRank": 17,
+                        "nextRank": 18,
+                        "requirement": "499qd",
+                        "requirementExact": 499000000000000000,
+                        "energyMultiplier": "65.54K",
+                        "energyMultiplierExact": 65536.0
+                    },
+                    {
+                        "currentRank": 18,
+                        "nextRank": 19,
+                        "requirement": "55Qn",
+                        "requirementExact": 55000000000000000000,
+                        "energyMultiplier": "131.07K",
+                        "energyMultiplierExact": 131072.0
+                    },
+                    {
+                        "currentRank": 19,
+                        "nextRank": 20,
+                        "requirement": "969Qn",
+                        "requirementExact": 969000000000000000000,
+                        "energyMultiplier": "262.14K",
+                        "energyMultiplierExact": 262144.0
+                    },
+                    {
+                        "currentRank": 20,
+                        "nextRank": 21,
+                        "requirement": "7.8sx",
+                        "requirementExact": 7800000000000000000000,
+                        "energyMultiplier": "524.29K",
+                        "energyMultiplierExact": 524288.0
+                    },
+                    {
+                        "currentRank": 21,
+                        "nextRank": 22,
+                        "requirement": "33sx",
+                        "requirementExact": 33000000000000000000000,
+                        "energyMultiplier": "1.05M",
+                        "energyMultiplierExact": 1048576.0
+                    },
+                    {
+                        "currentRank": 22,
+                        "nextRank": 23,
+                        "requirement": "495sx",
+                        "requirementExact": 495000000000000000000000,
+                        "energyMultiplier": "2.10M",
+                        "energyMultiplierExact": 2097152.0
+                    },
+                    {
+                        "currentRank": 23,
+                        "nextRank": 24,
+                        "requirement": "1.25Sp",
+                        "requirementExact": 1250000000000000000000000,
+                        "energyMultiplier": "4.19M",
+                        "energyMultiplierExact": 4194304.0
+                    },
+                    {
+                        "currentRank": 24,
+                        "nextRank": 25,
+                        "requirement": "14Sp",
+                        "requirementExact": 14000000000000000000000000,
+                        "energyMultiplier": "8.39M",
+                        "energyMultiplierExact": 8388608.0
+                    },
+                    {
+                        "currentRank": 25,
+                        "nextRank": 26,
+                        "requirement": "69Sp",
+                        "requirementExact": 69000000000000000000000000,
+                        "energyMultiplier": "16.78M",
+                        "energyMultiplierExact": 16777216.0
+                    },
+                    {
+                        "currentRank": 26,
+                        "nextRank": 27,
+                        "requirement": "475Sp",
+                        "requirementExact": 475000000000000000000000000,
+                        "energyMultiplier": "33.55M",
+                        "energyMultiplierExact": 33554432.0
+                    },
+                    {
+                        "currentRank": 27,
+                        "nextRank": 28,
+                        "requirement": "7.21O",
+                        "requirementExact": 7210000000000000000000000000,
+                        "energyMultiplier": "67.11M",
+                        "energyMultiplierExact": 67108864.0
+                    },
+                    {
+                        "currentRank": 28,
+                        "nextRank": 29,
+                        "requirement": "39.8O",
+                        "requirementExact": 39800000000000000000000000000,
+                        "energyMultiplier": "134.22M",
+                        "energyMultiplierExact": 134217728.0
+                    },
+                    {
+                        "currentRank": 29,
+                        "nextRank": 30,
+                        "requirement": "284O",
+                        "requirementExact": 284000000000000000000000000000,
+                        "energyMultiplier": "268.44M",
+                        "energyMultiplierExact": 268435456.0
+                    },
+                    {
+                        "currentRank": 30,
+                        "nextRank": 31,
+                        "requirement": "769O",
+                        "requirementExact": 769000000000000000000000000000,
+                        "energyMultiplier": "536.87M",
+                        "energyMultiplierExact": 536870912.0
+                    },
+                    {
+                        "currentRank": 31,
+                        "nextRank": 32,
+                        "requirement": "1.25N",
+                        "requirementExact": 1250000000000000000000000000000,
+                        "energyMultiplier": "1.07B",
+                        "energyMultiplierExact": 1073741824.0
+                    },
+                    {
+                        "currentRank": 32,
+                        "nextRank": 33,
+                        "requirement": "5N",
+                        "requirementExact": 5000000000000000000000000000000,
+                        "energyMultiplier": "2.15B",
+                        "energyMultiplierExact": 2147483648.0
+                    },
+                    {
+                        "currentRank": 33,
+                        "nextRank": 34,
+                        "requirement": "22.2N",
+                        "requirementExact": 22200000000000000000000000000000,
+                        "energyMultiplier": "4.29B",
+                        "energyMultiplierExact": 4294967296.0
+                    },
+                    {
+                        "currentRank": 34,
+                        "nextRank": 35,
+                        "requirement": "500N",
+                        "requirementExact": 500000000000000000000000000000000,
+                        "energyMultiplier": "8.59B",
+                        "energyMultiplierExact": 8589934592.0
+                    },
+                    {
+                        "currentRank": 35,
+                        "nextRank": 36,
+                        "requirement": "6.9de",
+                        "requirementExact": 6900000000000000000000000000000000,
+                        "energyMultiplier": "17.18B",
+                        "energyMultiplierExact": 17179869184.0
+                    },
+                    {
+                        "currentRank": 36,
+                        "nextRank": 37,
+                        "requirement": "9.9de",
+                        "requirementExact": 9900000000000000000000000000000000,
+                        "energyMultiplier": "34.36B",
+                        "energyMultiplierExact": 34359738368.0
+                    },
+                    {
+                        "currentRank": 37,
+                        "nextRank": 38,
+                        "requirement": "27.8de",
+                        "requirementExact": 27800000000000000000000000000000000,
+                        "energyMultiplier": "68.72B",
+                        "energyMultiplierExact": 68719476736.0
+                    },
+                    {
+                        "currentRank": 38,
+                        "nextRank": 39,
+                        "requirement": "76.9de",
+                        "requirementExact": 76900000000000000000000000000000000,
+                        "energyMultiplier": "137.44B",
+                        "energyMultiplierExact": 137438953472.0
+                    },
+                    {
+                        "currentRank": 39,
+                        "nextRank": 40,
+                        "requirement": "100de",
+                        "requirementExact": 100000000000000000000000000000000000,
+                        "energyMultiplier": "274.88B",
+                        "energyMultiplierExact": 274877906944.0
+                    },
+                    {
+                        "currentRank": 40,
+                        "nextRank": 41,
+                        "requirement": "642de",
+                        "requirementExact": 642000000000000000000000000000000000,
+                        "energyMultiplier": "549.76B",
+                        "energyMultiplierExact": 549755813888.0
+                    },
+                    {
+                        "currentRank": 41,
+                        "nextRank": 42,
+                        "requirement": "7Ud",
+                        "requirementExact": 7000000000000000000000000000000000000,
+                        "energyMultiplier": "1.10T",
+                        "energyMultiplierExact": 1099511627776.0
+                    },
+                    {
+                        "currentRank": 42,
+                        "nextRank": 43,
+                        "requirement": "80Ud",
+                        "requirementExact": 80000000000000000000000000000000000000,
+                        "energyMultiplier": "2.20T",
+                        "energyMultiplierExact": 2199023255552.0
+                    },
+                    {
+                        "currentRank": 43,
+                        "nextRank": 44,
+                        "requirement": "900Ud",
+                        "requirementExact": 900000000000000000000000000000000000000,
+                        "energyMultiplier": "4.40T",
+                        "energyMultiplierExact": 4398046511104.0
+                    },
+                    {
+                        "currentRank": 44,
+                        "nextRank": 45,
+                        "requirement": "1DD",
+                        "requirementExact": 1000000000000000000000000000000000000000,
+                        "energyMultiplier": "8.80T",
+                        "energyMultiplierExact": 8796093022208.0
+                    },
+                    {
+                        "currentRank": 45,
+                        "nextRank": 46,
+                        "requirement": "9.99DD",
+                        "requirementExact": 9990000000000000000000000000000000000000,
+                        "energyMultiplier": "17.59T",
+                        "energyMultiplierExact": 17592186044416.0
+                    },
+                    {
+                        "currentRank": 46,
+                        "nextRank": 47,
+                        "requirement": "85DD",
+                        "requirementExact": 85000000000000000000000000000000000000000,
+                        "energyMultiplier": "35.18T",
+                        "energyMultiplierExact": 35184372088832.0
+                    },
+                    {
+                        "currentRank": 47,
+                        "nextRank": 48,
+                        "requirement": "498DD",
+                        "requirementExact": 498000000000000000000000000000000000000000,
+                        "energyMultiplier": "70.37T",
+                        "energyMultiplierExact": 70368744177664.0
+                    },
+                    {
+                        "currentRank": 48,
+                        "nextRank": 49,
+                        "requirement": "7.77tdD",
+                        "requirementExact": 7770000000000000000000000000000000000000000,
+                        "energyMultiplier": "140.74T",
+                        "energyMultiplierExact": 140737488355328.0
+                    },
+                    {
+                        "currentRank": 49,
+                        "nextRank": 50,
+                        "requirement": "64.2tdD",
+                        "requirementExact": 64200000000000000000000000000000000000000000,
+                        "energyMultiplier": "281.47T",
+                        "energyMultiplierExact": 281474976710656.0
+                    },
+                    {
+                        "currentRank": 50,
+                        "nextRank": 51,
+                        "requirement": "500tdD",
+                        "requirementExact": 500000000000000000000000000000000000000000000,
+                        "energyMultiplier": "562.95T",
+                        "energyMultiplierExact": 562949953421312.0
+                    },
+                    {
+                        "currentRank": 51,
+                        "nextRank": 52,
+                        "requirement": "998tdD",
+                        "requirementExact": 998000000000000000000000000000000000000000000,
+                        "energyMultiplier": "1.13qd",
+                        "energyMultiplierExact": 1125899906842624.0
+                    },
+                    {
+                        "currentRank": 52,
+                        "nextRank": 53,
+                        "requirement": "4qdD",
+                        "requirementExact": 4000000000000000000000000000000000000000000000,
+                        "energyMultiplier": "2.25qd",
+                        "energyMultiplierExact": 2251799813685248.0
+                    },
+                    {
+                        "currentRank": 53,
+                        "nextRank": 54,
+                        "requirement": "9qdD",
+                        "requirementExact": 9000000000000000000000000000000000000000000000,
+                        "energyMultiplier": "4.50qd",
+                        "energyMultiplierExact": 4503599627370496.0
+                    },
+                    {
+                        "currentRank": 54,
+                        "nextRank": 55,
+                        "requirement": "64.2qdD",
+                        "requirementExact": 64200000000000000000000000000000000000000000000,
+                        "energyMultiplier": "9.01qd",
+                        "energyMultiplierExact": 9007199254740992.0
+                    },
+                    {
+                        "currentRank": 55,
+                        "nextRank": 56,
+                        "requirement": "100qdD",
+                        "requirementExact": 100000000000000000000000000000000000000000000000,
+                        "energyMultiplier": "18.01qd",
+                        "energyMultiplierExact": 18014398509481984.0
+                    },
+                    {
+                        "currentRank": 56,
+                        "nextRank": 57,
+                        "requirement": "998qdD",
+                        "requirementExact": 998000000000000000000000000000000000000000000000,
+                        "energyMultiplier": "36.03qd",
+                        "energyMultiplierExact": 36028797018963968.0
+                    },
+                    {
+                        "currentRank": 57,
+                        "nextRank": 58,
+                        "requirement": "5QnD",
+                        "requirementExact": 5000000000000000000000000000000000000000000000000,
+                        "energyMultiplier": "72.06qd",
+                        "energyMultiplierExact": 72057594037927936.0
+                    },
+                    {
+                        "currentRank": 58,
+                        "nextRank": 59,
+                        "requirement": "10QnD",
+                        "requirementExact": 10000000000000000000000000000000000000000000000000,
+                        "energyMultiplier": "144.12qd",
+                        "energyMultiplierExact": 144115188075855872.0
+                    },
+                    {
+                        "currentRank": 59,
+                        "nextRank": 60,
+                        "requirement": "68.9Qnd",
+                        "requirementExact": 68900000000000000000000000000000000000000000000000,
+                        "energyMultiplier": "288.23qd",
+                        "energyMultiplierExact": 288230376151711744.0
+                    },
+                    {
+                        "currentRank": 60,
+                        "nextRank": 61,
+                        "requirement": "541QnD",
+                        "requirementExact": 541000000000000000000000000000000000000000000000000,
+                        "energyMultiplier": "576.46qd",
+                        "energyMultiplierExact": 576460752303423488.0
+                    },
+                    {
+                        "currentRank": 61,
+                        "nextRank": 62,
+                        "requirement": "9sxD",
+                        "requirementExact": 9000000000000000000000000000000000000000000000000000,
+                        "energyMultiplier": "1.15Qn",
+                        "energyMultiplierExact": 1152921504606846976.0
+                    },
+                    {
+                        "currentRank": 62,
+                        "nextRank": 63,
+                        "requirement": "300sxD",
+                        "requirementExact": 300000000000000000000000000000000000000000000000000000,
+                        "energyMultiplier": "2.31Qn",
+                        "energyMultiplierExact": 2305843009213693952.0
+                    },
+                    {
+                        "currentRank": 63,
+                        "nextRank": 64,
+                        "requirement": "8.32spD",
+                        "requirementExact": 8320000000000000000000000000000000000000000000000000000,
+                        "energyMultiplier": "4.61Qn",
+                        "energyMultiplierExact": 4611686018427387904.0
+                    },
+                    {
+                        "currentRank": 64,
+                        "nextRank": 65,
+                        "requirement": "91spD",
+                        "requirementExact": 91000000000000000000000000000000000000000000000000000000,
+                        "energyMultiplier": "9.22Qn",
+                        "energyMultiplierExact": 9223372036854775808.0
+                    },
+                    {
+                        "currentRank": 65,
+                        "nextRank": 66,
+                        "requirement": "1.21OcD",
+                        "requirementExact": 1210000000000000000000000000000000000000000000000000000000,
+                        "energyMultiplier": "18.45Qn",
+                        "energyMultiplierExact": 18446744073709551616.0
+                    }
+                ]
+            }
+        },
+        {
+            "id": "avatar-index",
+            "title": "Avatar Index",
+            "description": "Complete avatar catalog",
+            "icon": "user",
+            "color": "from-blue-500 to-cyan-600",
+            "href": "/avatars",
+            "enabled": true
+        },
+        {
+            "id": "champion-index",
+            "title": "Champion Index",
+            "description": "Guide to all champions",
+            "icon": "shield",
+            "color": "from-red-500 to-pink-600",
+            "href": "/champions",
+            "enabled": true
+        },
+        {
+            "id": "dungeons",
+            "title": "Dungeons",
+            "description": "Dungeons and their rewards",
+            "icon": "mapPin",
+            "color": "from-purple-500 to-violet-600",
+            "href": "/dungeons",
+            "enabled": true
+        },
+        {
+            "id": "jewelry",
+            "title": "Jewelry",
+            "description": "Special jewels and accessories",
+            "icon": "gem",
+            "color": "from-emerald-500 to-teal-600",
+            "href": "/jewelry",
+            "enabled": true
+        },
+        {
+            "id": "worlds",
+            "title": "Worlds",
+            "description": "Worlds and locations",
+            "icon": "globe",
+            "color": "from-indigo-500 to-blue-600",
+            "href": "/worlds",
+            "enabled": true
+        },
+        {
+            "id": "auras",
+            "title": "Auras",
+            "description": "Special effects and auras",
+            "icon": "sparkles",
+            "color": "from-pink-500 to-rose-600",
+            "href": "/auras",
+            "enabled": true
+        },
+        {
+            "id": "weapons",
+            "title": "Weapons",
+            "description": "Complete weapon arsenal",
+            "icon": "sword",
+            "color": "from-orange-500 to-red-600",
+            "href": "/weapons",
+            "enabled": true
+        }
+    ]
+}
