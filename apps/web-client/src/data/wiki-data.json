@@ -1,0 +1,76 @@
+{
+    "modules": [
+        {
+            "id": "rank-up",
+            "title": "Rank Up",
+            "description": "Progression system and rankings",
+            "icon": "crown",
+            "color": "from-yellow-500 to-amber-600",
+            "href": "/rank-up",
+            "enabled": true
+        },
+        {
+            "id": "avatar-index",
+            "title": "Avatar Index",
+            "description": "Complete avatar catalog",
+            "icon": "user",
+            "color": "from-blue-500 to-cyan-600",
+            "href": "/avatars",
+            "enabled": true
+        },
+        {
+            "id": "champion-index",
+            "title": "Champion Index",
+            "description": "Guide to all champions",
+            "icon": "shield",
+            "color": "from-red-500 to-pink-600",
+            "href": "/champions",
+            "enabled": true
+        },
+        {
+            "id": "dungeons",
+            "title": "Dungeons",
+            "description": "Dungeons and their rewards",
+            "icon": "mapPin",
+            "color": "from-purple-500 to-violet-600",
+            "href": "/dungeons",
+            "enabled": true
+        },
+        {
+            "id": "jewelry",
+            "title": "Jewelry",
+            "description": "Special jewels and accessories",
+            "icon": "gem",
+            "color": "from-emerald-500 to-teal-600",
+            "href": "/jewelry",
+            "enabled": true
+        },
+        {
+            "id": "worlds",
+            "title": "Worlds",
+            "description": "Worlds and locations",
+            "icon": "globe",
+            "color": "from-indigo-500 to-blue-600",
+            "href": "/worlds",
+            "enabled": true
+        },
+        {
+            "id": "auras",
+            "title": "Auras",
+            "description": "Special effects and auras",
+            "icon": "sparkles",
+            "color": "from-pink-500 to-rose-600",
+            "href": "/auras",
+            "enabled": true
+        },
+        {
+            "id": "weapons",
+            "title": "Weapons",
+            "description": "Complete weapon arsenal",
+            "icon": "sword",
+            "color": "from-orange-500 to-red-600",
+            "href": "/weapons",
+            "enabled": true
+        }
+    ]
+}

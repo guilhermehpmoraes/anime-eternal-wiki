@@ -2,78 +2,26 @@ import { Badge, Card, CardContent, CardDescription, CardHeader, CardTitle, Separ
 import { cn } from "@anime-eternal-wiki/utils";
 import { createFileRoute } from "@tanstack/react-router";
 import { Crown, Gem, Globe, MapPin, Shield, Sparkles, Sword, User } from "lucide-react";
+import wikiData from "../data/wiki-data.json";
 
 export const Route = createFileRoute("/")({
     component: Index,
 });
 
+// Icon mapping
+const iconMap = {
+    crown: Crown,
+    user: User,
+    shield: Shield,
+    mapPin: MapPin,
+    gem: Gem,
+    globe: Globe,
+    sparkles: Sparkles,
+    sword: Sword,
+} as const;
+
 function Index() {
-    const modules = [
-        {
-            id: "rank-up",
-            title: "Rank Up",
-            description: "Progression system and rankings",
-            icon: Crown,
-            color: "from-yellow-500 to-amber-600",
-            href: "/rank-up",
-        },
-        {
-            id: "avatar-index",
-            title: "Avatar Index",
-            description: "Complete avatar catalog",
-            icon: User,
-            color: "from-blue-500 to-cyan-600",
-            href: "/avatars",
-        },
-        {
-            id: "champion-index",
-            title: "Champion Index",
-            description: "Guide to all champions",
-            icon: Shield,
-            color: "from-red-500 to-pink-600",
-            href: "/champions",
-        },
-        {
-            id: "dungeons",
-            title: "Dungeons",
-            description: "Dungeons and their rewards",
-            icon: MapPin,
-            color: "from-purple-500 to-violet-600",
-            href: "/dungeons",
-        },
-        {
-            id: "jewelry",
-            title: "Jewelry",
-            description: "Special jewels and accessories",
-            icon: Gem,
-            color: "from-emerald-500 to-teal-600",
-            href: "/jewelry",
-        },
-        {
-            id: "worlds",
-            title: "Worlds",
-            description: "Worlds and locations",
-            icon: Globe,
-            color: "from-indigo-500 to-blue-600",
-            href: "/worlds",
-        },
-        {
-            id: "auras",
-            title: "Auras",
-            description: "Special effects and auras",
-            icon: Sparkles,
-            color: "from-pink-500 to-rose-600",
-            href: "/auras",
-        },
-        {
-            id: "weapons",
-            title: "Weapons",
-            description: "Complete weapon arsenal",
-            icon: Sword,
-            color: "from-orange-500 to-red-600",
-            href: "/weapons",
-        },
-    ];
+    const { modules } = wikiData;
 
     return (
         <>
@@ -92,7 +40,7 @@ function Index() {
                     <Badge
                         variant="secondary"
                         className="text-sm bg-purple-500/20 text-purple-200 border-purple-500/30">
-                        Last updated: August 6, 2025
+                        Last updated: August 7, 2025
                     </Badge>
                 </div>
 
@@ -102,34 +50,34 @@ function Index() {
                 <div className="mb-16">
                     <h2 className="text-3xl font-bold text-white mb-8 text-center">Explore the Systems</h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                        {modules.map((module) => {
-                            const IconComponent = module.icon;
-                            const cardContent = (
-                                <Card
-                                    key={module.id}
-                                    className="group bg-white/5 border-white/10 hover:bg-white/10 transition-all duration-300 cursor-pointer hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/25">
-                                    <CardHeader className="text-center pb-4">
-                                        <div
-                                            className={cn(
-                                                "w-16 h-16 mx-auto rounded-2xl flex items-center justify-center mb-4 bg-gradient-to-r transition-transform duration-300 group-hover:scale-110",
-                                                module.color,
-                                            )}>
-                                            <IconComponent className="w-8 h-8 text-white" />
-                                        </div>
-                                        <CardTitle className="text-white text-lg group-hover:text-purple-300 transition-colors">
-                                            {module.title}
-                                        </CardTitle>
-                                    </CardHeader>
-                                    <CardContent className="text-center">
-                                        <CardDescription className="text-gray-400 text-sm leading-relaxed">
-                                            {module.description}
-                                        </CardDescription>
-                                    </CardContent>
-                                </Card>
-                            );
-
-                            return cardContent;
-                        })}
+                        {modules
+                            .filter((module) => module.enabled)
+                            .map((module) => {
+                                const IconComponent = iconMap[module.icon as keyof typeof iconMap];
+                                return (
+                                    <Card
+                                        key={module.id}
+                                        className="group bg-white/5 border-white/10 hover:bg-white/10 transition-all duration-300 cursor-pointer hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/25">
+                                        <CardHeader className="text-center pb-4">
+                                            <div
+                                                className={cn(
+                                                    "w-16 h-16 mx-auto rounded-2xl flex items-center justify-center mb-4 bg-gradient-to-r transition-transform duration-300 group-hover:scale-110",
+                                                    module.color,
+                                                )}>
+                                                <IconComponent className="w-8 h-8 text-white" />
+                                            </div>
+                                            <CardTitle className="text-white text-lg group-hover:text-purple-300 transition-colors">
+                                                {module.title}
+                                            </CardTitle>
+                                        </CardHeader>
+                                        <CardContent className="text-center">
+                                            <CardDescription className="text-gray-400 text-sm leading-relaxed">
+                                                {module.description}
+                                            </CardDescription>
+                                        </CardContent>
+                                    </Card>
+                                );
+                            })}
                     </div>
                 </div>
 
