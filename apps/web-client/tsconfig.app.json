@@ -7,7 +7,8 @@
         "lib": ["dom"],
         "types": ["node", "@nx/react/typings/cssmodule.d.ts", "@nx/react/typings/image.d.ts", "vite/client"],
         "module": "esnext",
-        "moduleResolution": "bundler"
+        "moduleResolution": "bundler",
+        "resolveJsonModule": true
     },
     "exclude": [
         "out-tsc",
@@ -21,13 +22,13 @@
         "src/**/*.spec.jsx",
         "src/**/*.test.jsx"
     ],
-    "include": ["src/**/*.js", "src/**/*.jsx", "src/**/*.ts", "src/**/*.tsx"],
+    "include": ["src/**/*.js", "src/**/*.jsx", "src/**/*.ts", "src/**/*.tsx", "src/**/*.json"],
     "references": [
-      {
-        "path": "../../libs/utils"
-      },
-      {
-        "path": "../../libs/ui"
-      }
+        {
+            "path": "../../libs/utils"
+        },
+        {
+            "path": "../../libs/ui"
+        }
     ]
 }
