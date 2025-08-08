@@ -128,7 +128,7 @@ function RouteComponent() {
 
                     {/* World Filter */}
                     <Select value={selectedWorld} onValueChange={setSelectedWorld}>
-                        <SelectTrigger className="w-full sm:w-48">
+                        <SelectTrigger className="w-full sm:w-48 bg-white/10 border-white/20">
                             <SelectValue placeholder="Select World" className="text-white" />
                         </SelectTrigger>
                         <SelectContent>
@@ -148,7 +148,7 @@ function RouteComponent() {
 
                     {/* Rarity Filter */}
                     <Select value={selectedRarity} onValueChange={setSelectedRarity}>
-                        <SelectTrigger className="w-full sm:w-48">
+                        <SelectTrigger className="w-full sm:w-48 bg-white/10 border-white/20">
                             <SelectValue placeholder="Select Rarity" className="text-white" />
                         </SelectTrigger>
                         <SelectContent>
