@@ -18,12 +18,11 @@ import {
     TooltipProvider,
     TooltipTrigger,
 } from "@anime-eternal-wiki/ui";
-import { cn } from "@anime-eternal-wiki/utils";
+import { cn, getRarityColor, getRarityOrder, Rarity } from "@anime-eternal-wiki/utils";
 import { createFileRoute } from "@tanstack/react-router";
 import { Globe, Search, User, X } from "lucide-react";
 import { useMemo, useState } from "react";
 import { useAvatarData } from "../../hooks/useAvatarData";
-import { RARITY_COLORS, RARITY_ORDER } from "../../types/avatar";
 
 export const Route = createFileRoute("/avatar/")({
     component: RouteComponent,
@@ -33,9 +32,14 @@ function RouteComponent() {
     const { worlds, filterAvatars } = useAvatarData();
     const [searchTerm, setSearchTerm] = useState("");
     const [selectedWorld, setSelectedWorld] = useState("all");
-    const [selectedRarity, setSelectedRarity] = useState("all");
+    const [selectedRarity, setSelectedRarity] = useState<"all" | Rarity>("all");
 
-    const rarities = ["Common", "Uncommon", "Rare", "Epic", "Legendary", "Mythical", "Phantom"];
+    const rarities: Rarity[] = ["Common", "Uncommon", "Rare", "Epic", "Legendary", "Mythical", "Phantom"];
+
+    // Helper to handle rarity change
+    const handleRarityChange = (value: string) => {
+        setSelectedRarity(value as "all" | Rarity);
+    };
 
     // Format numbers helper
     const formatNumber = (num: number) => {
@@ -68,8 +72,8 @@ function RouteComponent() {
         // Sort avatars within each world by rarity order
         for (const worldName of Object.keys(grouped)) {
             grouped[worldName].sort((a, b) => {
-                const rarityA = RARITY_ORDER[a.rarity.toUpperCase() as keyof typeof RARITY_ORDER];
-                const rarityB = RARITY_ORDER[b.rarity.toUpperCase() as keyof typeof RARITY_ORDER];
+                const rarityA = getRarityOrder(a.rarity);
+                const rarityB = getRarityOrder(b.rarity);
                 return rarityA - rarityB;
             });
         }
@@ -154,7 +158,7 @@ function RouteComponent() {
                     </Select>
 
                     {/* Rarity Filter */}
-                    <Select value={selectedRarity} onValueChange={setSelectedRarity}>
+                    <Select value={selectedRarity} onValueChange={handleRarityChange}>
                         <SelectTrigger className="w-full sm:w-48 bg-white/10 border-white/20">
                             <SelectValue placeholder="Select Rarity" className="text-white" />
                         </SelectTrigger>
@@ -168,7 +172,7 @@ function RouteComponent() {
                                         <div
                                             className={cn(
                                                 "h-3 w-3 rounded-full bg-gradient-to-r",
-                                                RARITY_COLORS[rarity.toUpperCase() as keyof typeof RARITY_COLORS],
+                                                getRarityColor(rarity),
                                             )}
                                         />
                                         <span>{rarity}</span>
@@ -216,7 +220,7 @@ function RouteComponent() {
                                 variant="secondary"
                                 className={cn(
                                     "flex items-center gap-1 text-white border-0 bg-gradient-to-r",
-                                    RARITY_COLORS[selectedRarity.toUpperCase() as keyof typeof RARITY_COLORS],
+                                    getRarityColor(selectedRarity),
                                 )}>
                                 {selectedRarity}
                                 <button
@@ -249,8 +253,7 @@ function RouteComponent() {
                             </div>
                             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
                                 {worldAvatars.map((avatar, index) => {
-                                    const rarityKey = avatar.rarity.toUpperCase() as keyof typeof RARITY_COLORS;
-                                    const gradientClass = RARITY_COLORS[rarityKey];
+                                    const gradientClass = getRarityColor(avatar.rarity);
 
                                     return (
                                         <TooltipProvider key={`${avatar.worldName}-${avatar.name}-${index}`}>
