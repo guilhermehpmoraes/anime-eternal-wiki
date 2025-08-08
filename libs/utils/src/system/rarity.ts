@@ -10,6 +10,16 @@ export const RARITY_COLORS = {
     PHANTOM: "from-pink-400 to-pink-500",
 } as const;
 
+export const RARITY_STYLES = {
+    COMMON: { background: "linear-gradient(to right, #9CA3AF, #6B7280)" },
+    UNCOMMON: { background: "linear-gradient(to right, #4ADE80, #22C55E)" },
+    RARE: { background: "linear-gradient(to right, #60A5FA, #3B82F6)" },
+    EPIC: { background: "linear-gradient(to right, #C084FC, #A855F7)" },
+    LEGENDARY: { background: "linear-gradient(to right, #FACC15, #EAB308)" },
+    MYTHICAL: { background: "linear-gradient(to right, #F87171, #EF4444)" },
+    PHANTOM: { background: "linear-gradient(to right, #F472B6, #EC4899)" },
+} as const;
+
 export const RARITY_ORDER = {
     COMMON: 1,
     UNCOMMON: 2,
@@ -25,6 +35,13 @@ export const RARITY_ORDER = {
  */
 export function getRarityColor(rarity: Rarity): string {
     return RARITY_COLORS[rarity.toUpperCase() as keyof typeof RARITY_COLORS];
+}
+
+/**
+ * Helper function to get the inline style for a given rarity
+ */
+export function getRarityStyle(rarity: Rarity): { background: string } {
+    return RARITY_STYLES[rarity.toUpperCase() as keyof typeof RARITY_STYLES];
 }
 
 /**

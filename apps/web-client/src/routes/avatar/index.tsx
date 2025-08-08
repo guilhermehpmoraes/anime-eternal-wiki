@@ -18,7 +18,7 @@ import {
     TooltipProvider,
     TooltipTrigger,
 } from "@anime-eternal-wiki/ui";
-import { cn, getRarityColor, getRarityOrder, Rarity } from "@anime-eternal-wiki/utils";
+import { getRarityOrder, getRarityStyle, Rarity } from "@anime-eternal-wiki/utils";
 import { createFileRoute } from "@tanstack/react-router";
 import { Globe, Search, User, X } from "lucide-react";
 import { useMemo, useState } from "react";
@@ -169,12 +169,7 @@ function RouteComponent() {
                             {rarities.map((rarity) => (
                                 <SelectItem key={rarity} value={rarity} className="text-gray-800 font-medium">
                                     <div className="flex items-center space-x-2">
-                                        <div
-                                            className={cn(
-                                                "h-3 w-3 rounded-full bg-gradient-to-r",
-                                                getRarityColor(rarity),
-                                            )}
-                                        />
+                                        <div className="h-3 w-3 rounded-full" style={getRarityStyle(rarity)} />
                                         <span>{rarity}</span>
                                     </div>
                                 </SelectItem>
@@ -218,10 +213,8 @@ function RouteComponent() {
                         {selectedRarity !== "all" && (
                             <Badge
                                 variant="secondary"
-                                className={cn(
-                                    "flex items-center gap-1 text-white border-0 bg-gradient-to-r",
-                                    getRarityColor(selectedRarity),
-                                )}>
+                                className="flex items-center gap-1 text-white border-0"
+                                style={getRarityStyle(selectedRarity)}>
                                 {selectedRarity}
                                 <button
                                     type="button"
@@ -253,8 +246,6 @@ function RouteComponent() {
                             </div>
                             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
                                 {worldAvatars.map((avatar, index) => {
-                                    const gradientClass = getRarityColor(avatar.rarity);
-
                                     return (
                                         <TooltipProvider key={`${avatar.worldName}-${avatar.name}-${index}`}>
                                             <Tooltip>
@@ -264,10 +255,8 @@ function RouteComponent() {
                                                             <div className="flex items-center justify-between">
                                                                 <div className="flex items-center space-x-3">
                                                                     <Avatar
-                                                                        className={cn(
-                                                                            "h-12 w-12 bg-gradient-to-br",
-                                                                            gradientClass,
-                                                                        )}>
+                                                                        className="h-12 w-12"
+                                                                        style={getRarityStyle(avatar.rarity)}>
                                                                         <div className="flex items-center justify-center h-full w-full text-white font-bold text-lg">
                                                                             {avatar.name.charAt(0)}
                                                                         </div>
@@ -283,10 +272,8 @@ function RouteComponent() {
                                                                 </div>
                                                                 <Badge
                                                                     variant="secondary"
-                                                                    className={cn(
-                                                                        "bg-gradient-to-r text-white border-0 font-semibold shadow-md",
-                                                                        gradientClass,
-                                                                    )}>
+                                                                    className="text-white border-0 font-semibold shadow-md"
+                                                                    style={getRarityStyle(avatar.rarity)}>
                                                                     {avatar.rarity}
                                                                 </Badge>
                                                             </div>
