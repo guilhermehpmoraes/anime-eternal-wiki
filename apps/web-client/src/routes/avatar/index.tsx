@@ -120,22 +120,24 @@ function RouteComponent() {
                     <div className="relative flex-1">
                         <Search className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
                         <Input
-                            placeholder="Search avatars or worlds..."
+                            placeholder="🔍 Search avatars or worlds..."
                             value={searchTerm}
                             onChange={(e: React.ChangeEvent<HTMLInputElement>) => setSearchTerm(e.target.value)}
-                            className="pl-10"
+                            className="pl-10 bg-background border-2"
                         />
                     </div>
 
                     {/* World Filter */}
                     <Select value={selectedWorld} onValueChange={setSelectedWorld}>
-                        <SelectTrigger className="w-full sm:w-48">
-                            <SelectValue placeholder="Select World" />
+                        <SelectTrigger className="w-full sm:w-48 bg-background border-2">
+                            <SelectValue placeholder="🌍 All Worlds" />
                         </SelectTrigger>
                         <SelectContent>
-                            <SelectItem value="all">All Worlds</SelectItem>
+                            <SelectItem value="all" className="font-medium">
+                                🌍 All Worlds
+                            </SelectItem>
                             {worlds.map((world) => (
-                                <SelectItem key={world.id} value={world.id.toString()}>
+                                <SelectItem key={world.id} value={world.id.toString()} className="font-medium">
                                     {world.name}
                                 </SelectItem>
                             ))}
@@ -144,13 +146,15 @@ function RouteComponent() {
 
                     {/* Rarity Filter */}
                     <Select value={selectedRarity} onValueChange={setSelectedRarity}>
-                        <SelectTrigger className="w-full sm:w-48">
-                            <SelectValue placeholder="Select Rarity" />
+                        <SelectTrigger className="w-full sm:w-48 bg-background border-2">
+                            <SelectValue placeholder="✨ All Rarities" />
                         </SelectTrigger>
                         <SelectContent>
-                            <SelectItem value="all">All Rarities</SelectItem>
+                            <SelectItem value="all" className="font-medium">
+                                ✨ All Rarities
+                            </SelectItem>
                             {rarities.map((rarity) => (
-                                <SelectItem key={rarity} value={rarity}>
+                                <SelectItem key={rarity} value={rarity} className="font-medium">
                                     <div className="flex items-center space-x-2">
                                         <div
                                             className={cn(
@@ -213,11 +217,11 @@ function RouteComponent() {
                     <div className="space-y-8">
                         {Object.entries(avatarsByWorld).map(([worldName, worldAvatars]) => (
                             <div key={worldName} className="space-y-4">
-                                <div className="flex items-center gap-3">
-                                    <Globe className="h-5 w-5 text-blue-600" />
-                                    <h2 className="text-xl font-semibold">{worldName}</h2>
-                                    <span className="text-sm text-muted-foreground">
-                                        ({worldAvatars.length} avatar{worldAvatars.length !== 1 ? "s" : ""})
+                                <div className="flex items-center gap-3 p-3 bg-muted/30 rounded-lg border">
+                                    <Globe className="h-6 w-6 text-blue-600" />
+                                    <h2 className="text-2xl font-bold text-foreground">{worldName}</h2>
+                                    <span className="text-sm font-semibold text-muted-foreground bg-background px-2 py-1 rounded-md">
+                                        {worldAvatars.length} avatar{worldAvatars.length !== 1 ? "s" : ""}
                                     </span>
                                 </div>
                                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
