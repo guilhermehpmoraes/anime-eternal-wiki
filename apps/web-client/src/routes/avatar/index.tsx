@@ -22,6 +22,7 @@ import { getRarityOrder, getRarityStyle, Rarity } from "@anime-eternal-wiki/util
 import { createFileRoute } from "@tanstack/react-router";
 import { Globe, Search, User, X } from "lucide-react";
 import { useMemo, useState } from "react";
+import wikiData from "../../data/wiki-data.json";
 import { useAvatarData } from "../../hooks/useAvatarData";
 
 export const Route = createFileRoute("/avatar/")({
@@ -35,6 +36,20 @@ function RouteComponent() {
     const [selectedRarity, setSelectedRarity] = useState<"all" | Rarity>("all");
 
     const rarities: Rarity[] = ["Common", "Uncommon", "Rare", "Epic", "Legendary", "Mythical", "Phantom"];
+
+    // Get avatar upgrade data
+    const avatarModule = wikiData.modules.find((module) => module.id === "avatar");
+    const upgradeData = avatarModule?.data?.upgrades || [];
+
+    // Calculate energy with upgrade level
+    const calculateEnergyWithUpgrade = (baseEnergy: number, level: number): number => {
+        const upgrade = upgradeData.find((u) => u.level === level);
+        if (!upgrade) return baseEnergy;
+
+        // Convert percentage string to number (e.g., "100%" -> 100)
+        const bonusPercent = parseInt(upgrade.energyBonus.replace("%", ""));
+        return Math.floor(baseEnergy * (1 + bonusPercent / 100));
+    };
 
     // Helper to handle rarity change
     const handleRarityChange = (value: string) => {
@@ -302,16 +317,23 @@ function RouteComponent() {
                                                 </TooltipTrigger>
                                                 <TooltipContent className="bg-popover/95 backdrop-blur-sm border border-border">
                                                     <div className="space-y-1">
-                                                        <p className="font-semibold text-foreground">{avatar.name}</p>
-                                                        <p className="text-xs text-muted-foreground">
-                                                            World: {avatar.worldName}
-                                                        </p>
-                                                        <p className="text-xs text-muted-foreground">
-                                                            Rarity: {avatar.rarity}
-                                                        </p>
-                                                        <p className="text-xs text-muted-foreground">
-                                                            Base Energy: {avatar.baseEnergy.toLocaleString()}
-                                                        </p>
+                                                        <div className="border-border pt-1 mt-1">
+                                                            <p className="text-xs text-muted-foreground">
+                                                                Base Energy: {formatNumber(avatar.baseEnergy)}
+                                                            </p>
+                                                            <p className="text-xs text-muted-foreground">
+                                                                Energy Lvl 100:{" "}
+                                                                {formatNumber(
+                                                                    calculateEnergyWithUpgrade(avatar.baseEnergy, 100),
+                                                                )}
+                                                            </p>
+                                                            <p className="text-xs text-muted-foreground">
+                                                                Energy Lvl 150:{" "}
+                                                                {formatNumber(
+                                                                    calculateEnergyWithUpgrade(avatar.baseEnergy, 150),
+                                                                )}
+                                                            </p>
+                                                        </div>
                                                     </div>
                                                 </TooltipContent>
                                             </Tooltip>
