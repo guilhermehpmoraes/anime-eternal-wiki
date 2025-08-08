@@ -14,10 +14,6 @@ import {
     SelectTrigger,
     SelectValue,
     Skeleton,
-    Tabs,
-    TabsContent,
-    TabsList,
-    TabsTrigger,
     Tooltip,
     TooltipContent,
     TooltipProvider,
@@ -25,7 +21,7 @@ import {
 } from "@anime-eternal-wiki/ui";
 import { cn } from "@anime-eternal-wiki/utils";
 import { createFileRoute } from "@tanstack/react-router";
-import { BarChart3, Globe, Grid3x3, Search, X } from "lucide-react";
+import { Globe, Search, X } from "lucide-react";
 import { useMemo, useState } from "react";
 import { useAvatarData } from "../../hooks/useAvatarData";
 import { RARITY_COLORS, RARITY_ORDER } from "../../types/avatar";
@@ -35,11 +31,10 @@ export const Route = createFileRoute("/avatar/")({
 });
 
 function RouteComponent() {
-    const { worlds, allAvatars, filterAvatars } = useAvatarData();
+    const { worlds, filterAvatars } = useAvatarData();
     const [searchTerm, setSearchTerm] = useState("");
     const [selectedWorld, setSelectedWorld] = useState("all");
     const [selectedRarity, setSelectedRarity] = useState("all");
-    const [activeTab, setActiveTab] = useState("grid");
 
     const rarities = ["Common", "Uncommon", "Rare", "Epic", "Legendary", "Mythical", "Phantom"];
 
@@ -82,21 +77,6 @@ function RouteComponent() {
 
         return grouped;
     }, [filteredAvatars]);
-
-    // Calculate statistics
-    const stats = useMemo(() => {
-        const rarityBreakdown: Record<string, number> = {};
-
-        for (const avatar of filteredAvatars) {
-            rarityBreakdown[avatar.rarity] = (rarityBreakdown[avatar.rarity] || 0) + 1;
-        }
-
-        return {
-            totalAvatars: filteredAvatars.length,
-            totalWorlds: Object.keys(avatarsByWorld).length,
-            rarityBreakdown,
-        };
-    }, [filteredAvatars, avatarsByWorld]);
 
     // Clear all filters
     const clearFilters = () => {
@@ -223,307 +203,102 @@ function RouteComponent() {
                 )}
             </div>
 
-            {/* Stats Display */}
-            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
-                {/* Total Stats */}
-                <Card>
-                    <CardHeader className="pb-2">
-                        <CardTitle className="text-sm font-medium">Total Avatars</CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                        <div className="text-2xl font-bold">{stats.totalAvatars}</div>
-                    </CardContent>
-                </Card>
-
-                <Card>
-                    <CardHeader className="pb-2">
-                        <CardTitle className="text-sm font-medium">Total Worlds</CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                        <div className="text-2xl font-bold">{stats.totalWorlds}</div>
-                    </CardContent>
-                </Card>
-
-                {/* Rarity Breakdown */}
-                {Object.entries(stats.rarityBreakdown).map(([rarity, count]) => (
-                    <Card key={rarity} className="relative overflow-hidden">
-                        <CardHeader className="pb-2">
-                            <CardTitle className="text-sm font-medium flex items-center gap-2">
-                                <div
-                                    className={cn(
-                                        "h-3 w-3 rounded-full bg-gradient-to-r",
-                                        RARITY_COLORS[rarity.toUpperCase() as keyof typeof RARITY_COLORS],
-                                    )}
-                                />
-                                {rarity}
-                            </CardTitle>
-                        </CardHeader>
-                        <CardContent>
-                            <div className="text-2xl font-bold">{count}</div>
-                        </CardContent>
-                        <div
-                            className={cn(
-                                "absolute inset-0 bg-gradient-to-br opacity-5",
-                                RARITY_COLORS[rarity.toUpperCase() as keyof typeof RARITY_COLORS],
-                            )}
-                        />
-                    </Card>
-                ))}
-            </div>
-
-            {/* Main Content */}
-            <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-4">
-                <TabsList className="grid w-full grid-cols-3 lg:w-96">
-                    <TabsTrigger value="grid" className="flex items-center gap-2">
-                        <Grid3x3 className="h-4 w-4" />
-                        Grid View
-                    </TabsTrigger>
-                    <TabsTrigger value="worlds" className="flex items-center gap-2">
-                        <Globe className="h-4 w-4" />
-                        By Worlds
-                    </TabsTrigger>
-                    <TabsTrigger value="stats" className="flex items-center gap-2">
-                        <BarChart3 className="h-4 w-4" />
-                        Statistics
-                    </TabsTrigger>
-                </TabsList>
-
-                {/* Grid View */}
-                <TabsContent value="grid" className="space-y-4">
-                    {filteredAvatars.length === 0 ? (
-                        <div className="text-center py-12">
-                            <p className="text-muted-foreground">No avatars found matching your criteria.</p>
-                        </div>
-                    ) : (
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-                            {filteredAvatars.map((avatar, index) => {
-                                const rarityKey = avatar.rarity.toUpperCase() as keyof typeof RARITY_COLORS;
-                                const gradientClass = RARITY_COLORS[rarityKey];
-
-                                return (
-                                    <TooltipProvider key={`${avatar.worldName}-${avatar.name}-${index}`}>
-                                        <Tooltip>
-                                            <TooltipTrigger asChild>
-                                                <Card className="group cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-lg border-2 hover:border-opacity-50 bg-card">
-                                                    <CardHeader className="pb-2">
-                                                        <div className="flex items-center justify-between">
-                                                            <div className="flex items-center space-x-3">
-                                                                <Avatar
-                                                                    className={cn(
-                                                                        "h-12 w-12 bg-gradient-to-br",
-                                                                        gradientClass,
-                                                                    )}>
-                                                                    <div className="flex items-center justify-center h-full w-full text-white font-bold text-lg">
-                                                                        {avatar.name.charAt(0)}
-                                                                    </div>
-                                                                </Avatar>
-                                                                <div>
-                                                                    <CardTitle className="text-sm font-semibold text-foreground">
-                                                                        {avatar.name}
-                                                                    </CardTitle>
-                                                                    <p className="text-xs text-muted-foreground font-medium">
-                                                                        {avatar.worldName}
-                                                                    </p>
-                                                                </div>
-                                                            </div>
-                                                            <Badge
-                                                                variant="secondary"
-                                                                className={cn(
-                                                                    "bg-gradient-to-r text-white border-0 font-semibold shadow-md",
-                                                                    gradientClass,
-                                                                )}>
-                                                                {avatar.rarity}
-                                                            </Badge>
-                                                        </div>
-                                                    </CardHeader>
-                                                    <CardContent className="pt-0">
-                                                        <div className="flex items-center justify-between bg-muted/50 rounded-md px-3 py-2">
-                                                            <span className="text-xs font-medium text-muted-foreground">
-                                                                Base Energy
-                                                            </span>
-                                                            <span className="font-bold text-sm text-foreground">
-                                                                {formatNumber(avatar.baseEnergy)}
-                                                            </span>
-                                                        </div>
-                                                    </CardContent>
-                                                </Card>
-                                            </TooltipTrigger>
-                                            <TooltipContent className="bg-popover/95 backdrop-blur-sm border border-border">
-                                                <div className="space-y-1">
-                                                    <p className="font-semibold text-foreground">{avatar.name}</p>
-                                                    <p className="text-xs text-muted-foreground">
-                                                        World: {avatar.worldName}
-                                                    </p>
-                                                    <p className="text-xs text-muted-foreground">
-                                                        Rarity: {avatar.rarity}
-                                                    </p>
-                                                    <p className="text-xs text-muted-foreground">
-                                                        Base Energy: {avatar.baseEnergy.toLocaleString()}
-                                                    </p>
-                                                </div>
-                                            </TooltipContent>
-                                        </Tooltip>
-                                    </TooltipProvider>
-                                );
-                            })}
-                        </div>
-                    )}
-                </TabsContent>
-
-                {/* World View */}
-                <TabsContent value="worlds" className="space-y-6">
-                    <ScrollArea className="h-[600px]">
-                        {Object.keys(avatarsByWorld).length === 0 ? (
-                            <div className="text-center py-12">
-                                <p className="text-muted-foreground">No worlds found matching your criteria.</p>
-                            </div>
-                        ) : (
-                            <div className="space-y-8">
-                                {Object.entries(avatarsByWorld).map(([worldName, worldAvatars]) => (
-                                    <div key={worldName} className="space-y-4">
-                                        <div className="flex items-center gap-3">
-                                            <Globe className="h-5 w-5 text-blue-600" />
-                                            <h2 className="text-xl font-semibold">{worldName}</h2>
-                                            <span className="text-sm text-muted-foreground">
-                                                ({worldAvatars.length} avatar{worldAvatars.length !== 1 ? "s" : ""})
-                                            </span>
-                                        </div>
-                                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-                                            {worldAvatars.map((avatar, index) => {
-                                                const rarityKey =
-                                                    avatar.rarity.toUpperCase() as keyof typeof RARITY_COLORS;
-                                                const gradientClass = RARITY_COLORS[rarityKey];
-
-                                                return (
-                                                    <TooltipProvider
-                                                        key={`${avatar.worldName}-${avatar.name}-${index}`}>
-                                                        <Tooltip>
-                                                            <TooltipTrigger asChild>
-                                                                <Card className="group cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-lg border-2 hover:border-opacity-50 bg-card">
-                                                                    <CardHeader className="pb-2">
-                                                                        <div className="flex items-center justify-between">
-                                                                            <div className="flex items-center space-x-3">
-                                                                                <Avatar
-                                                                                    className={cn(
-                                                                                        "h-12 w-12 bg-gradient-to-br",
-                                                                                        gradientClass,
-                                                                                    )}>
-                                                                                    <div className="flex items-center justify-center h-full w-full text-white font-bold text-lg">
-                                                                                        {avatar.name.charAt(0)}
-                                                                                    </div>
-                                                                                </Avatar>
-                                                                                <div>
-                                                                                    <CardTitle className="text-sm font-semibold text-foreground">
-                                                                                        {avatar.name}
-                                                                                    </CardTitle>
-                                                                                    <p className="text-xs text-muted-foreground font-medium">
-                                                                                        {avatar.worldName}
-                                                                                    </p>
-                                                                                </div>
-                                                                            </div>
-                                                                            <Badge
-                                                                                variant="secondary"
-                                                                                className={cn(
-                                                                                    "bg-gradient-to-r text-white border-0 font-semibold shadow-md",
-                                                                                    gradientClass,
-                                                                                )}>
-                                                                                {avatar.rarity}
-                                                                            </Badge>
-                                                                        </div>
-                                                                    </CardHeader>
-                                                                    <CardContent className="pt-0">
-                                                                        <div className="flex items-center justify-between bg-muted/50 rounded-md px-3 py-2">
-                                                                            <span className="text-xs font-medium text-muted-foreground">
-                                                                                Base Energy
-                                                                            </span>
-                                                                            <span className="font-bold text-sm text-foreground">
-                                                                                {formatNumber(avatar.baseEnergy)}
-                                                                            </span>
-                                                                        </div>
-                                                                    </CardContent>
-                                                                </Card>
-                                                            </TooltipTrigger>
-                                                            <TooltipContent className="bg-popover/95 backdrop-blur-sm border border-border">
-                                                                <div className="space-y-1">
-                                                                    <p className="font-semibold text-foreground">
-                                                                        {avatar.name}
-                                                                    </p>
-                                                                    <p className="text-xs text-muted-foreground">
-                                                                        World: {avatar.worldName}
-                                                                    </p>
-                                                                    <p className="text-xs text-muted-foreground">
-                                                                        Rarity: {avatar.rarity}
-                                                                    </p>
-                                                                    <p className="text-xs text-muted-foreground">
-                                                                        Base Energy:{" "}
-                                                                        {avatar.baseEnergy.toLocaleString()}
-                                                                    </p>
-                                                                </div>
-                                                            </TooltipContent>
-                                                        </Tooltip>
-                                                    </TooltipProvider>
-                                                );
-                                            })}
-                                        </div>
-                                    </div>
-                                ))}
-                            </div>
-                        )}
-                    </ScrollArea>
-                </TabsContent>
-
-                {/* Statistics View */}
-                <TabsContent value="stats" className="space-y-6">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                        {/* Avatar Count by World */}
-                        <div className="space-y-4">
-                            <h3 className="text-lg font-semibold">Avatars by World</h3>
-                            <div className="space-y-2">
-                                {worlds.map((world) => {
-                                    const worldAvatars = allAvatars.filter((a) => a.worldName === world.name);
-                                    return (
-                                        <div
-                                            key={world.id}
-                                            className="flex justify-between items-center p-3 bg-muted/50 rounded-lg border">
-                                            <span className="font-medium text-foreground">{world.name}</span>
-                                            <span className="text-sm text-muted-foreground font-semibold">
-                                                {worldAvatars.length} avatars
-                                            </span>
-                                        </div>
-                                    );
-                                })}
-                            </div>
-                        </div>
-
-                        {/* Additional Stats */}
-                        <div className="space-y-4">
-                            <h3 className="text-lg font-semibold">Collection Overview</h3>
-                            <div className="space-y-2">
-                                <div className="flex justify-between items-center p-3 bg-muted/50 rounded-lg border">
-                                    <span className="font-medium text-foreground">Total Avatars</span>
-                                    <span className="text-sm text-muted-foreground font-semibold">
-                                        {allAvatars.length}
-                                    </span>
-                                </div>
-                                <div className="flex justify-between items-center p-3 bg-muted/50 rounded-lg border">
-                                    <span className="font-medium text-foreground">Total Worlds</span>
-                                    <span className="text-sm text-muted-foreground font-semibold">{worlds.length}</span>
-                                </div>
-                                <div className="flex justify-between items-center p-3 bg-muted/50 rounded-lg border">
-                                    <span className="font-medium text-foreground">Rarity Types</span>
-                                    <span className="text-sm text-muted-foreground font-semibold">7 types</span>
-                                </div>
-                                <div className="flex justify-between items-center p-3 bg-muted/50 rounded-lg border">
-                                    <span className="font-medium text-foreground">Average per World</span>
-                                    <span className="text-sm text-muted-foreground font-semibold">
-                                        {Math.round(allAvatars.length / worlds.length)} avatars
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
+            {/* Main Content - Avatars by World */}
+            <ScrollArea className="h-[600px]">
+                {Object.keys(avatarsByWorld).length === 0 ? (
+                    <div className="text-center py-12">
+                        <p className="text-muted-foreground">No worlds found matching your criteria.</p>
                     </div>
-                </TabsContent>
-            </Tabs>
+                ) : (
+                    <div className="space-y-8">
+                        {Object.entries(avatarsByWorld).map(([worldName, worldAvatars]) => (
+                            <div key={worldName} className="space-y-4">
+                                <div className="flex items-center gap-3">
+                                    <Globe className="h-5 w-5 text-blue-600" />
+                                    <h2 className="text-xl font-semibold">{worldName}</h2>
+                                    <span className="text-sm text-muted-foreground">
+                                        ({worldAvatars.length} avatar{worldAvatars.length !== 1 ? "s" : ""})
+                                    </span>
+                                </div>
+                                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+                                    {worldAvatars.map((avatar, index) => {
+                                        const rarityKey = avatar.rarity.toUpperCase() as keyof typeof RARITY_COLORS;
+                                        const gradientClass = RARITY_COLORS[rarityKey];
+
+                                        return (
+                                            <TooltipProvider key={`${avatar.worldName}-${avatar.name}-${index}`}>
+                                                <Tooltip>
+                                                    <TooltipTrigger asChild>
+                                                        <Card className="group cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-lg border-2 hover:border-opacity-50 bg-card">
+                                                            <CardHeader className="pb-2">
+                                                                <div className="flex items-center justify-between">
+                                                                    <div className="flex items-center space-x-3">
+                                                                        <Avatar
+                                                                            className={cn(
+                                                                                "h-12 w-12 bg-gradient-to-br",
+                                                                                gradientClass,
+                                                                            )}>
+                                                                            <div className="flex items-center justify-center h-full w-full text-white font-bold text-lg">
+                                                                                {avatar.name.charAt(0)}
+                                                                            </div>
+                                                                        </Avatar>
+                                                                        <div>
+                                                                            <CardTitle className="text-sm font-semibold text-foreground">
+                                                                                {avatar.name}
+                                                                            </CardTitle>
+                                                                            <p className="text-xs text-muted-foreground font-medium">
+                                                                                {avatar.worldName}
+                                                                            </p>
+                                                                        </div>
+                                                                    </div>
+                                                                    <Badge
+                                                                        variant="secondary"
+                                                                        className={cn(
+                                                                            "bg-gradient-to-r text-white border-0 font-semibold shadow-md",
+                                                                            gradientClass,
+                                                                        )}>
+                                                                        {avatar.rarity}
+                                                                    </Badge>
+                                                                </div>
+                                                            </CardHeader>
+                                                            <CardContent className="pt-0">
+                                                                <div className="flex items-center justify-between bg-muted/50 rounded-md px-3 py-2">
+                                                                    <span className="text-xs font-medium text-muted-foreground">
+                                                                        Base Energy
+                                                                    </span>
+                                                                    <span className="font-bold text-sm text-foreground">
+                                                                        {formatNumber(avatar.baseEnergy)}
+                                                                    </span>
+                                                                </div>
+                                                            </CardContent>
+                                                        </Card>
+                                                    </TooltipTrigger>
+                                                    <TooltipContent className="bg-popover/95 backdrop-blur-sm border border-border">
+                                                        <div className="space-y-1">
+                                                            <p className="font-semibold text-foreground">
+                                                                {avatar.name}
+                                                            </p>
+                                                            <p className="text-xs text-muted-foreground">
+                                                                World: {avatar.worldName}
+                                                            </p>
+                                                            <p className="text-xs text-muted-foreground">
+                                                                Rarity: {avatar.rarity}
+                                                            </p>
+                                                            <p className="text-xs text-muted-foreground">
+                                                                Base Energy: {avatar.baseEnergy.toLocaleString()}
+                                                            </p>
+                                                        </div>
+                                                    </TooltipContent>
+                                                </Tooltip>
+                                            </TooltipProvider>
+                                        );
+                                    })}
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                )}
+            </ScrollArea>
         </div>
     );
 }
