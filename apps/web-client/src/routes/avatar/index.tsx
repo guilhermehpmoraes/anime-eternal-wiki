@@ -13,10 +13,6 @@ import {
     SelectTrigger,
     SelectValue,
     Skeleton,
-    Tooltip,
-    TooltipContent,
-    TooltipProvider,
-    TooltipTrigger,
 } from "@anime-eternal-wiki/ui";
 import { getRarityOrder, getRarityStyle, Rarity } from "@anime-eternal-wiki/utils";
 import { createFileRoute } from "@tanstack/react-router";
@@ -262,82 +258,86 @@ function RouteComponent() {
                             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
                                 {worldAvatars.map((avatar, index) => {
                                     return (
-                                        <TooltipProvider key={`${avatar.worldName}-${avatar.name}-${index}`}>
-                                            <Tooltip>
-                                                <TooltipTrigger asChild>
-                                                    <Card
-                                                        className="group cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-lg border-2 hover:border-opacity-50 relative overflow-hidden"
-                                                        style={{
-                                                            background: `linear-gradient(135deg, ${getRarityStyle(avatar.rarity).background}15, ${getRarityStyle(avatar.rarity).background}25)`,
-                                                            borderColor: getRarityStyle(avatar.rarity).background,
-                                                        }}>
-                                                        <CardHeader className="pb-2">
-                                                            <div className="flex items-center justify-between">
-                                                                <div className="flex items-center space-x-3">
-                                                                    <Avatar
-                                                                        className="h-12 w-12"
-                                                                        style={getRarityStyle(avatar.rarity)}>
-                                                                        <div className="flex items-center justify-center h-full w-full text-white font-bold text-lg">
-                                                                            {avatar.name.charAt(0)}
-                                                                        </div>
-                                                                    </Avatar>
-                                                                    <div>
-                                                                        <CardTitle className="text-sm font-bold text-gray-200">
-                                                                            {avatar.name}
-                                                                        </CardTitle>
-                                                                        <p className="text-xs text-muted-foreground font-medium">
-                                                                            {avatar.worldName}
-                                                                        </p>
-                                                                    </div>
-                                                                </div>
-                                                                <Badge
-                                                                    variant="secondary"
-                                                                    className="text-white border-0 font-semibold shadow-md"
-                                                                    style={getRarityStyle(avatar.rarity)}>
-                                                                    {avatar.rarity}
-                                                                </Badge>
+                                        <Card
+                                            key={`${avatar.worldName}-${avatar.name}-${index}`}
+                                            className="group cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-lg border-2 hover:border-opacity-50 relative overflow-hidden"
+                                            style={{
+                                                background: `linear-gradient(135deg, ${getRarityStyle(avatar.rarity).background}15, ${getRarityStyle(avatar.rarity).background}25)`,
+                                                borderColor: getRarityStyle(avatar.rarity).background,
+                                            }}>
+                                            <CardHeader className="pb-2">
+                                                <div className="flex items-center justify-between">
+                                                    <div className="flex items-center space-x-3">
+                                                        <Avatar
+                                                            className="h-12 w-12"
+                                                            style={getRarityStyle(avatar.rarity)}>
+                                                            <div className="flex items-center justify-center h-full w-full text-white font-bold text-lg">
+                                                                {avatar.name.charAt(0)}
                                                             </div>
-                                                        </CardHeader>
-                                                        <CardContent className="pt-0">
-                                                            <div
-                                                                className="flex items-center justify-between rounded-md px-3 py-2 backdrop-blur-sm"
-                                                                style={{
-                                                                    background: `${getRarityStyle(avatar.rarity).background}20`,
-                                                                    border: `1px solid ${getRarityStyle(avatar.rarity).background}40`,
-                                                                }}>
-                                                                <span className="text-xs font-medium text-gray-200">
-                                                                    Base Energy
-                                                                </span>
-                                                                <span className="font-bold text-sm text-gray-200">
-                                                                    {formatNumber(avatar.baseEnergy)}
-                                                                </span>
-                                                            </div>
-                                                        </CardContent>
-                                                    </Card>
-                                                </TooltipTrigger>
-                                                <TooltipContent className="bg-popover/95 backdrop-blur-sm border border-border">
-                                                    <div className="space-y-1">
-                                                        <div className="border-border pt-1 mt-1">
-                                                            <p className="text-xs text-muted-foreground">
-                                                                Base Energy: {formatNumber(avatar.baseEnergy)}
-                                                            </p>
-                                                            <p className="text-xs text-muted-foreground">
-                                                                Energy Lvl 100:{" "}
-                                                                {formatNumber(
-                                                                    calculateEnergyWithUpgrade(avatar.baseEnergy, 100),
-                                                                )}
-                                                            </p>
-                                                            <p className="text-xs text-muted-foreground">
-                                                                Energy Lvl 150:{" "}
-                                                                {formatNumber(
-                                                                    calculateEnergyWithUpgrade(avatar.baseEnergy, 150),
-                                                                )}
+                                                        </Avatar>
+                                                        <div>
+                                                            <CardTitle className="text-sm font-bold text-gray-200">
+                                                                {avatar.name}
+                                                            </CardTitle>
+                                                            <p className="text-xs text-muted-foreground font-medium">
+                                                                {avatar.worldName}
                                                             </p>
                                                         </div>
                                                     </div>
-                                                </TooltipContent>
-                                            </Tooltip>
-                                        </TooltipProvider>
+                                                    <Badge
+                                                        variant="secondary"
+                                                        className="text-white border-0 font-semibold shadow-md"
+                                                        style={getRarityStyle(avatar.rarity)}>
+                                                        {avatar.rarity}
+                                                    </Badge>
+                                                </div>
+                                            </CardHeader>
+                                            <CardContent className="pt-0 space-y-2">
+                                                <div
+                                                    className="flex items-center justify-between rounded-md px-3 py-2 backdrop-blur-sm"
+                                                    style={{
+                                                        background: `${getRarityStyle(avatar.rarity).background}20`,
+                                                        border: `1px solid ${getRarityStyle(avatar.rarity).background}40`,
+                                                    }}>
+                                                    <span className="text-xs font-medium text-gray-200">
+                                                        Base Energy
+                                                    </span>
+                                                    <span className="font-bold text-sm text-gray-200">
+                                                        {formatNumber(avatar.baseEnergy)}
+                                                    </span>
+                                                </div>
+                                                <div
+                                                    className="flex items-center justify-between rounded-md px-3 py-1 backdrop-blur-sm"
+                                                    style={{
+                                                        background: `${getRarityStyle(avatar.rarity).background}15`,
+                                                        border: `1px solid ${getRarityStyle(avatar.rarity).background}30`,
+                                                    }}>
+                                                    <span className="text-xs font-medium text-gray-300">
+                                                        Energy Lvl 100
+                                                    </span>
+                                                    <span className="font-semibold text-xs text-gray-200">
+                                                        {formatNumber(
+                                                            calculateEnergyWithUpgrade(avatar.baseEnergy, 100),
+                                                        )}
+                                                    </span>
+                                                </div>
+                                                <div
+                                                    className="flex items-center justify-between rounded-md px-3 py-1 backdrop-blur-sm"
+                                                    style={{
+                                                        background: `${getRarityStyle(avatar.rarity).background}15`,
+                                                        border: `1px solid ${getRarityStyle(avatar.rarity).background}30`,
+                                                    }}>
+                                                    <span className="text-xs font-medium text-gray-300">
+                                                        Energy Lvl 150
+                                                    </span>
+                                                    <span className="font-semibold text-xs text-gray-200">
+                                                        {formatNumber(
+                                                            calculateEnergyWithUpgrade(avatar.baseEnergy, 150),
+                                                        )}
+                                                    </span>
+                                                </div>
+                                            </CardContent>
+                                        </Card>
                                     );
                                 })}
                             </div>
