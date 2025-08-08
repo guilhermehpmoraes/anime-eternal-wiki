@@ -11,13 +11,13 @@ export const RARITY_COLORS = {
 } as const;
 
 export const RARITY_STYLES = {
-    COMMON: { background: "linear-gradient(to right, #9CA3AF, #6B7280)" },
-    UNCOMMON: { background: "linear-gradient(to right, #4ADE80, #22C55E)" },
-    RARE: { background: "linear-gradient(to right, #60A5FA, #3B82F6)" },
-    EPIC: { background: "linear-gradient(to right, #C084FC, #A855F7)" },
-    LEGENDARY: { background: "linear-gradient(to right, #FACC15, #EAB308)" },
-    MYTHICAL: { background: "linear-gradient(to right, #F87171, #EF4444)" },
-    PHANTOM: { background: "linear-gradient(to right, #F472B6, #EC4899)" },
+    COMMON: { background: "#868686" },
+    UNCOMMON: { background: "#00ff00" },
+    RARE: { background: "#27dbff" },
+    EPIC: { background: "#c800ff" },
+    LEGENDARY: { background: "#ffc82d" },
+    MYTHICAL: { background: "#ff0000" },
+    PHANTOM: { background: "#450067" },
 } as const;
 
 export const RARITY_ORDER = {
