@@ -185,13 +185,23 @@ function RouteComponent() {
                         {searchTerm && (
                             <Badge variant="secondary" className="flex items-center gap-1">
                                 Search: {searchTerm}
-                                <X className="h-3 w-3 cursor-pointer" onClick={() => setSearchTerm("")} />
+                                <button
+                                    type="button"
+                                    className="ml-1 hover:text-red-500 transition-colors"
+                                    onClick={() => setSearchTerm("")}>
+                                    <X className="h-3 w-3" />
+                                </button>
                             </Badge>
                         )}
                         {selectedWorld !== "all" && (
                             <Badge variant="secondary" className="flex items-center gap-1">
                                 World: {worlds.find((w) => w.id.toString() === selectedWorld)?.name}
-                                <X className="h-3 w-3 cursor-pointer" onClick={() => setSelectedWorld("all")} />
+                                <button
+                                    type="button"
+                                    className="ml-1 hover:text-red-500 transition-colors"
+                                    onClick={() => setSelectedWorld("all")}>
+                                    <X className="h-3 w-3" />
+                                </button>
                             </Badge>
                         )}
                         {selectedRarity !== "all" && (
@@ -202,7 +212,12 @@ function RouteComponent() {
                                     RARITY_COLORS[selectedRarity.toUpperCase() as keyof typeof RARITY_COLORS],
                                 )}>
                                 {selectedRarity}
-                                <X className="h-3 w-3 cursor-pointer" onClick={() => setSelectedRarity("all")} />
+                                <button
+                                    type="button"
+                                    className="ml-1 hover:text-red-300 transition-colors"
+                                    onClick={() => setSelectedRarity("all")}>
+                                    <X className="h-3 w-3" />
+                                </button>
                             </Badge>
                         )}
                     </div>
