@@ -18,6 +18,7 @@ const iconMap = {
     globe: Globe,
     sparkles: Sparkles,
     sword: Sword,
+    level: Sparkles,
 } as const;
 
 function Index() {
@@ -79,6 +80,14 @@ function Index() {
                                 );
 
                                 if (module.id === "rank-up") {
+                                    return (
+                                        <Link key={module.id} to={module.href}>
+                                            {cardContent}
+                                        </Link>
+                                    );
+                                }
+
+                                if (module.id === "avatar") {
                                     return (
                                         <Link key={module.id} to={module.href}>
                                             {cardContent}
