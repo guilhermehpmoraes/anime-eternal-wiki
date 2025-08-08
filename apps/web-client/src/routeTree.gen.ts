@@ -13,6 +13,7 @@ import { Route as SplatRouteImport } from './routes/$splat'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as RankUpIndexRouteImport } from './routes/rank-up/index'
 import { Route as GuidesIndexRouteImport } from './routes/guides/index'
+import { Route as AvatarIndexRouteImport } from './routes/avatar/index'
 
 const SplatRoute = SplatRouteImport.update({
   id: '/$splat',
@@ -34,16 +35,23 @@ const GuidesIndexRoute = GuidesIndexRouteImport.update({
   path: '/guides/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AvatarIndexRoute = AvatarIndexRouteImport.update({
+  id: '/avatar/',
+  path: '/avatar/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/$splat': typeof SplatRoute
+  '/avatar': typeof AvatarIndexRoute
   '/guides': typeof GuidesIndexRoute
   '/rank-up': typeof RankUpIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/$splat': typeof SplatRoute
+  '/avatar': typeof AvatarIndexRoute
   '/guides': typeof GuidesIndexRoute
   '/rank-up': typeof RankUpIndexRoute
 }
@@ -51,20 +59,22 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/$splat': typeof SplatRoute
+  '/avatar/': typeof AvatarIndexRoute
   '/guides/': typeof GuidesIndexRoute
   '/rank-up/': typeof RankUpIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/$splat' | '/guides' | '/rank-up'
+  fullPaths: '/' | '/$splat' | '/avatar' | '/guides' | '/rank-up'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/$splat' | '/guides' | '/rank-up'
-  id: '__root__' | '/' | '/$splat' | '/guides/' | '/rank-up/'
+  to: '/' | '/$splat' | '/avatar' | '/guides' | '/rank-up'
+  id: '__root__' | '/' | '/$splat' | '/avatar/' | '/guides/' | '/rank-up/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   SplatRoute: typeof SplatRoute
+  AvatarIndexRoute: typeof AvatarIndexRoute
   GuidesIndexRoute: typeof GuidesIndexRoute
   RankUpIndexRoute: typeof RankUpIndexRoute
 }
@@ -99,12 +109,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof GuidesIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/avatar/': {
+      id: '/avatar/'
+      path: '/avatar'
+      fullPath: '/avatar'
+      preLoaderRoute: typeof AvatarIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   SplatRoute: SplatRoute,
+  AvatarIndexRoute: AvatarIndexRoute,
   GuidesIndexRoute: GuidesIndexRoute,
   RankUpIndexRoute: RankUpIndexRoute,
 }

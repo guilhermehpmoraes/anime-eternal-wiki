@@ -534,13 +534,168 @@
             }
         },
         {
-            "id": "avatar-index",
-            "title": "Avatar Index",
+            "id": "avatar",
+            "title": "Avatar",
             "description": "Complete avatar catalog",
             "icon": "user",
             "color": "from-blue-500 to-cyan-600",
-            "href": "/avatars",
-            "enabled": true
+            "href": "/avatar",
+            "enabled": true,
+            "data": {
+                "upgrades": [
+                    { "level": 1, "amount": 5, "energyBonus": "5%" },
+                    { "level": 2, "amount": 10, "energyBonus": "10%" },
+                    { "level": 3, "amount": 15, "energyBonus": "15%" },
+                    { "level": 4, "amount": 20, "energyBonus": "20%" },
+                    { "level": 5, "amount": 25, "energyBonus": "25%" },
+                    { "level": 6, "amount": 30, "energyBonus": "30%" },
+                    { "level": 7, "amount": 35, "energyBonus": "35%" },
+                    { "level": 8, "amount": 40, "energyBonus": "40%" },
+                    { "level": 9, "amount": 45, "energyBonus": "45%" },
+                    { "level": 10, "amount": 50, "energyBonus": "50%" },
+                    { "level": 11, "amount": 55, "energyBonus": "55%" },
+                    { "level": 12, "amount": 60, "energyBonus": "60%" },
+                    { "level": 13, "amount": 65, "energyBonus": "65%" },
+                    { "level": 14, "amount": 70, "energyBonus": "70%" },
+                    { "level": 15, "amount": 75, "energyBonus": "75%" },
+                    { "level": 16, "amount": 80, "energyBonus": "80%" },
+                    { "level": 17, "amount": 85, "energyBonus": "85%" },
+                    { "level": 18, "amount": 90, "energyBonus": "90%" },
+                    { "level": 19, "amount": 95, "energyBonus": "95%" },
+                    { "level": 20, "amount": 100, "energyBonus": "100%" },
+                    { "level": 21, "amount": 105, "energyBonus": "105%" },
+                    { "level": 22, "amount": 110, "energyBonus": "110%" },
+                    { "level": 23, "amount": 115, "energyBonus": "115%" },
+                    { "level": 24, "amount": 120, "energyBonus": "120%" },
+                    { "level": 25, "amount": 125, "energyBonus": "125%" },
+                    { "level": 26, "amount": 130, "energyBonus": "130%" },
+                    { "level": 27, "amount": 135, "energyBonus": "135%" },
+                    { "level": 28, "amount": 140, "energyBonus": "140%" },
+                    { "level": 29, "amount": 145, "energyBonus": "145%" },
+                    { "level": 30, "amount": 150, "energyBonus": "150%" },
+                    { "level": 31, "amount": 155, "energyBonus": "155%" },
+                    { "level": 32, "amount": 160, "energyBonus": "160%" },
+                    { "level": 33, "amount": 165, "energyBonus": "165%" },
+                    { "level": 34, "amount": 170, "energyBonus": "170%" },
+                    { "level": 35, "amount": 175, "energyBonus": "175%" },
+                    { "level": 36, "amount": 180, "energyBonus": "180%" },
+                    { "level": 37, "amount": 185, "energyBonus": "185%" },
+                    { "level": 38, "amount": 190, "energyBonus": "190%" },
+                    { "level": 39, "amount": 195, "energyBonus": "195%" },
+                    { "level": 40, "amount": 200, "energyBonus": "200%" },
+                    { "level": 41, "amount": 205, "energyBonus": "205%" },
+                    { "level": 42, "amount": 210, "energyBonus": "210%" },
+                    { "level": 43, "amount": 215, "energyBonus": "215%" },
+                    { "level": 44, "amount": 220, "energyBonus": "220%" },
+                    { "level": 45, "amount": 225, "energyBonus": "225%" },
+                    { "level": 46, "amount": 230, "energyBonus": "230%" },
+                    { "level": 47, "amount": 235, "energyBonus": "235%" },
+                    { "level": 48, "amount": 240, "energyBonus": "240%" },
+                    { "level": 49, "amount": 245, "energyBonus": "245%" },
+                    { "level": 50, "amount": 250, "energyBonus": "250%" },
+                    { "level": 51, "amount": 255, "energyBonus": "255%" },
+                    { "level": 52, "amount": 260, "energyBonus": "260%" },
+                    { "level": 53, "amount": 265, "energyBonus": "265%" },
+                    { "level": 54, "amount": 270, "energyBonus": "270%" },
+                    { "level": 55, "amount": 275, "energyBonus": "275%" },
+                    { "level": 56, "amount": 280, "energyBonus": "280%" },
+                    { "level": 57, "amount": 285, "energyBonus": "285%" },
+                    { "level": 58, "amount": 290, "energyBonus": "290%" },
+                    { "level": 59, "amount": 295, "energyBonus": "295%" },
+                    { "level": 60, "amount": 300, "energyBonus": "300%" },
+                    { "level": 61, "amount": 305, "energyBonus": "305%" },
+                    { "level": 62, "amount": 310, "energyBonus": "310%" },
+                    { "level": 63, "amount": 315, "energyBonus": "315%" },
+                    { "level": 64, "amount": 320, "energyBonus": "320%" },
+                    { "level": 65, "amount": 325, "energyBonus": "325%" },
+                    { "level": 66, "amount": 330, "energyBonus": "330%" },
+                    { "level": 67, "amount": 335, "energyBonus": "335%" },
+                    { "level": 68, "amount": 340, "energyBonus": "340%" },
+                    { "level": 69, "amount": 345, "energyBonus": "345%" },
+                    { "level": 70, "amount": 350, "energyBonus": "350%" },
+                    { "level": 71, "amount": 355, "energyBonus": "355%" },
+                    { "level": 72, "amount": 360, "energyBonus": "360%" },
+                    { "level": 73, "amount": 365, "energyBonus": "365%" },
+                    { "level": 74, "amount": 370, "energyBonus": "370%" },
+                    { "level": 75, "amount": 375, "energyBonus": "375%" },
+                    { "level": 76, "amount": 380, "energyBonus": "380%" },
+                    { "level": 77, "amount": 385, "energyBonus": "385%" },
+                    { "level": 78, "amount": 390, "energyBonus": "390%" },
+                    { "level": 79, "amount": 395, "energyBonus": "395%" },
+                    { "level": 80, "amount": 400, "energyBonus": "400%" },
+                    { "level": 81, "amount": 405, "energyBonus": "405%" },
+                    { "level": 82, "amount": 410, "energyBonus": "410%" },
+                    { "level": 83, "amount": 415, "energyBonus": "415%" },
+                    { "level": 84, "amount": 420, "energyBonus": "420%" },
+                    { "level": 85, "amount": 425, "energyBonus": "425%" },
+                    { "level": 86, "amount": 430, "energyBonus": "430%" },
+                    { "level": 87, "amount": 435, "energyBonus": "435%" },
+                    { "level": 88, "amount": 440, "energyBonus": "440%" },
+                    { "level": 89, "amount": 445, "energyBonus": "445%" },
+                    { "level": 90, "amount": 450, "energyBonus": "450%" },
+                    { "level": 91, "amount": 455, "energyBonus": "455%" },
+                    { "level": 92, "amount": 460, "energyBonus": "460%" },
+                    { "level": 93, "amount": 465, "energyBonus": "465%" },
+                    { "level": 94, "amount": 470, "energyBonus": "470%" },
+                    { "level": 95, "amount": 475, "energyBonus": "475%" },
+                    { "level": 96, "amount": 480, "energyBonus": "480%" },
+                    { "level": 97, "amount": 485, "energyBonus": "485%" },
+                    { "level": 98, "amount": 490, "energyBonus": "490%" },
+                    { "level": 99, "amount": 495, "energyBonus": "495%" },
+                    { "level": 100, "amount": 500, "energyBonus": "500%" },
+                    { "level": 101, "amount": 550, "energyBonus": "505%" },
+                    { "level": 102, "amount": 600, "energyBonus": "510%" },
+                    { "level": 103, "amount": 650, "energyBonus": "515%" },
+                    { "level": 104, "amount": 700, "energyBonus": "520%" },
+                    { "level": 105, "amount": 750, "energyBonus": "525%" },
+                    { "level": 106, "amount": 800, "energyBonus": "530%" },
+                    { "level": 107, "amount": 850, "energyBonus": "535%" },
+                    { "level": 108, "amount": 900, "energyBonus": "540%" },
+                    { "level": 109, "amount": 950, "energyBonus": "545%" },
+                    { "level": 110, "amount": 1000, "energyBonus": "550%" },
+                    { "level": 111, "amount": 1100, "energyBonus": "555%" },
+                    { "level": 112, "amount": 1200, "energyBonus": "560%" },
+                    { "level": 113, "amount": 1300, "energyBonus": "565%" },
+                    { "level": 114, "amount": 1400, "energyBonus": "570%" },
+                    { "level": 115, "amount": 1500, "energyBonus": "575%" },
+                    { "level": 116, "amount": 1600, "energyBonus": "580%" },
+                    { "level": 117, "amount": 1700, "energyBonus": "585%" },
+                    { "level": 118, "amount": 1800, "energyBonus": "590%" },
+                    { "level": 119, "amount": 1900, "energyBonus": "595%" },
+                    { "level": 120, "amount": 2000, "energyBonus": "600%" },
+                    { "level": 121, "amount": 2150, "energyBonus": "605%" },
+                    { "level": 122, "amount": 2300, "energyBonus": "610%" },
+                    { "level": 123, "amount": 2450, "energyBonus": "615%" },
+                    { "level": 124, "amount": 2600, "energyBonus": "620%" },
+                    { "level": 125, "amount": 2800, "energyBonus": "625%" },
+                    { "level": 126, "amount": 3000, "energyBonus": "630%" },
+                    { "level": 127, "amount": 3200, "energyBonus": "635%" },
+                    { "level": 128, "amount": 3400, "energyBonus": "640%" },
+                    { "level": 129, "amount": 3600, "energyBonus": "645%" },
+                    { "level": 130, "amount": 3800, "energyBonus": "650%" },
+                    { "level": 131, "amount": 4000, "energyBonus": "655%" },
+                    { "level": 132, "amount": 4200, "energyBonus": "660%" },
+                    { "level": 133, "amount": 4400, "energyBonus": "665%" },
+                    { "level": 134, "amount": 4600, "energyBonus": "670%" },
+                    { "level": 135, "amount": 4800, "energyBonus": "675%" },
+                    { "level": 136, "amount": 5000, "energyBonus": "680%" },
+                    { "level": 137, "amount": 5250, "energyBonus": "685%" },
+                    { "level": 138, "amount": 5500, "energyBonus": "690%" },
+                    { "level": 139, "amount": 5750, "energyBonus": "695%" },
+                    { "level": 140, "amount": 6000, "energyBonus": "700%" },
+                    { "level": 141, "amount": 6250, "energyBonus": "705%" },
+                    { "level": 142, "amount": 6500, "energyBonus": "710%" },
+                    { "level": 143, "amount": 6750, "energyBonus": "715%" },
+                    { "level": 144, "amount": 7000, "energyBonus": "720%" },
+                    { "level": 145, "amount": 7250, "energyBonus": "725%" },
+                    { "level": 146, "amount": 7500, "energyBonus": "730%" },
+                    { "level": 147, "amount": 7750, "energyBonus": "735%" },
+                    { "level": 148, "amount": 8000, "energyBonus": "740%" },
+                    { "level": 149, "amount": 8250, "energyBonus": "745%" },
+                    { "level": 150, "amount": 8500, "energyBonus": "750%" }
+                ],
+                "totalUpgradeCost": 201050
+            }
         },
         {
             "id": "champion-index",
@@ -549,7 +704,7 @@
             "icon": "shield",
             "color": "from-red-500 to-pink-600",
             "href": "/champions",
-            "enabled": true
+            "enabled": false
         },
         {
             "id": "dungeons",
@@ -558,7 +713,7 @@
             "icon": "mapPin",
             "color": "from-purple-500 to-violet-600",
             "href": "/dungeons",
-            "enabled": true
+            "enabled": false
         },
         {
             "id": "jewelry",
@@ -567,7 +722,7 @@
             "icon": "gem",
             "color": "from-emerald-500 to-teal-600",
             "href": "/jewelry",
-            "enabled": true
+            "enabled": false
         },
         {
             "id": "worlds",
@@ -576,7 +731,549 @@
             "icon": "globe",
             "color": "from-indigo-500 to-blue-600",
             "href": "/worlds",
-            "enabled": true
+            "enabled": false,
+            "data": {
+                "worlds": [
+                    {
+                        "id": 1,
+                        "name": "Earth City",
+                        "avatars": [
+                            {
+                                "name": "Kriluni",
+                                "rarity": "Common",
+                                "baseEnergy": 3
+                            },
+                            {
+                                "name": "Ymicha",
+                                "rarity": "Uncommon",
+                                "baseEnergy": 6
+                            },
+                            {
+                                "name": "Tian Shan",
+                                "rarity": "Rare",
+                                "baseEnergy": 9
+                            },
+                            {
+                                "name": "Kohan",
+                                "rarity": "Epic",
+                                "baseEnergy": 12
+                            },
+                            {
+                                "name": "Picco",
+                                "rarity": "Legendary",
+                                "baseEnergy": 15
+                            },
+                            {
+                                "name": "Koku",
+                                "rarity": "Mythical",
+                                "baseEnergy": 20
+                            },
+                            {
+                                "name": "Kid Kohan",
+                                "rarity": "Phantom",
+                                "baseEnergy": 60
+                            }
+                        ]
+                    },
+                    {
+                        "id": 2,
+                        "name": "Windmill Island",
+                        "avatars": [
+                            {
+                                "name": "Nomi",
+                                "rarity": "Common",
+                                "baseEnergy": 8
+                            },
+                            {
+                                "name": "Usup",
+                                "rarity": "Uncommon",
+                                "baseEnergy": 15
+                            },
+                            {
+                                "name": "Robins",
+                                "rarity": "Rare",
+                                "baseEnergy": 23
+                            },
+                            {
+                                "name": "Senji",
+                                "rarity": "Epic",
+                                "baseEnergy": 30
+                            },
+                            {
+                                "name": "Zaro",
+                                "rarity": "Legendary",
+                                "baseEnergy": 38
+                            },
+                            {
+                                "name": "Loffy",
+                                "rarity": "Mythical",
+                                "baseEnergy": 50
+                            },
+                            {
+                                "name": "Shanks",
+                                "rarity": "Phantom",
+                                "baseEnergy": 150
+                            }
+                        ]
+                    },
+                    {
+                        "id": 3,
+                        "name": "Soul Society",
+                        "avatars": [
+                            {
+                                "name": "Hime",
+                                "rarity": "Common",
+                                "baseEnergy": 19
+                            },
+                            {
+                                "name": "Ichige",
+                                "rarity": "Uncommon",
+                                "baseEnergy": 38
+                            },
+                            {
+                                "name": "Uryua",
+                                "rarity": "Rare",
+                                "baseEnergy": 56
+                            },
+                            {
+                                "name": "Rakiu",
+                                "rarity": "Epic",
+                                "baseEnergy": 75
+                            },
+                            {
+                                "name": "Yoichi",
+                                "rarity": "Legendary",
+                                "baseEnergy": 94
+                            },
+                            {
+                                "name": "Kahara",
+                                "rarity": "Mythical",
+                                "baseEnergy": 125
+                            },
+                            {
+                                "name": "Eizen",
+                                "rarity": "Phantom",
+                                "baseEnergy": 375
+                            }
+                        ]
+                    },
+                    {
+                        "id": 4,
+                        "name": "Cursed School",
+                        "avatars": [
+                            {
+                                "name": "Itodo",
+                                "rarity": "Common",
+                                "baseEnergy": 47
+                            },
+                            {
+                                "name": "Nebara",
+                                "rarity": "Uncommon",
+                                "baseEnergy": 94
+                            },
+                            {
+                                "name": "Magum",
+                                "rarity": "Rare",
+                                "baseEnergy": 141
+                            },
+                            {
+                                "name": "Meki",
+                                "rarity": "Epic",
+                                "baseEnergy": 188
+                            },
+                            {
+                                "name": "Tage",
+                                "rarity": "Legendary",
+                                "baseEnergy": 234
+                            },
+                            {
+                                "name": "Gajo",
+                                "rarity": "Mythical",
+                                "baseEnergy": 313
+                            },
+                            {
+                                "name": "Sakuni",
+                                "rarity": "Phantom",
+                                "baseEnergy": 938
+                            }
+                        ]
+                    },
+                    {
+                        "id": 5,
+                        "name": "Slayer Village",
+                        "avatars": [
+                            {
+                                "name": "Nazuki",
+                                "rarity": "Common",
+                                "baseEnergy": 117
+                            },
+                            {
+                                "name": "Tenjaro",
+                                "rarity": "Uncommon",
+                                "baseEnergy": 234
+                            },
+                            {
+                                "name": "Zentsu",
+                                "rarity": "Rare",
+                                "baseEnergy": 352
+                            },
+                            {
+                                "name": "Insake",
+                                "rarity": "Epic",
+                                "baseEnergy": 469
+                            },
+                            {
+                                "name": "Tamoka",
+                                "rarity": "Legendary",
+                                "baseEnergy": 586
+                            },
+                            {
+                                "name": "Shinabe",
+                                "rarity": "Mythical",
+                                "baseEnergy": 781
+                            },
+                            {
+                                "name": "Rangaki",
+                                "rarity": "Phantom",
+                                "baseEnergy": 2344
+                            }
+                        ]
+                    },
+                    {
+                        "id": 6,
+                        "name": "Solo Island",
+                        "avatars": [
+                            {
+                                "name": "Weak Sun",
+                                "rarity": "Common",
+                                "baseEnergy": 293
+                            },
+                            {
+                                "name": "Green Goblin",
+                                "rarity": "Uncommon",
+                                "baseEnergy": 586
+                            },
+                            {
+                                "name": "White Tiger",
+                                "rarity": "Rare",
+                                "baseEnergy": 879
+                            },
+                            {
+                                "name": "Cha",
+                                "rarity": "Epic",
+                                "baseEnergy": 1172
+                            },
+                            {
+                                "name": "Choi",
+                                "rarity": "Legendary",
+                                "baseEnergy": 1465
+                            },
+                            {
+                                "name": "Solo Sung",
+                                "rarity": "Mythical",
+                                "baseEnergy": 1953
+                            },
+                            {
+                                "name": "Statue of God",
+                                "rarity": "Phantom",
+                                "baseEnergy": 5859
+                            }
+                        ]
+                    },
+                    {
+                        "id": 7,
+                        "name": "Clover Village",
+                        "avatars": [
+                            {
+                                "name": "Noalle",
+                                "rarity": "Common",
+                                "baseEnergy": 732
+                            },
+                            {
+                                "name": "Megna",
+                                "rarity": "Uncommon",
+                                "baseEnergy": 1465
+                            },
+                            {
+                                "name": "Finrel",
+                                "rarity": "Rare",
+                                "baseEnergy": 2197
+                            },
+                            {
+                                "name": "Aste",
+                                "rarity": "Epic",
+                                "baseEnergy": 2930
+                            },
+                            {
+                                "name": "Yune",
+                                "rarity": "Legendary",
+                                "baseEnergy": 3662
+                            },
+                            {
+                                "name": "Yemi",
+                                "rarity": "Mythical",
+                                "baseEnergy": 4883
+                            },
+                            {
+                                "name": "Novi Chroni",
+                                "rarity": "Phantom",
+                                "baseEnergy": 14648
+                            }
+                        ]
+                    },
+                    {
+                        "id": 8,
+                        "name": "Leaf Village",
+                        "avatars": [
+                            {
+                                "name": "Sekuri",
+                                "rarity": "Common",
+                                "baseEnergy": 1831
+                            },
+                            {
+                                "name": "Kid Norto",
+                                "rarity": "Uncommon",
+                                "baseEnergy": 3662
+                            },
+                            {
+                                "name": "Kid Seske",
+                                "rarity": "Rare",
+                                "baseEnergy": 5493
+                            },
+                            {
+                                "name": "Kakashki",
+                                "rarity": "Epic",
+                                "baseEnergy": 7324
+                            },
+                            {
+                                "name": "Jiria",
+                                "rarity": "Legendary",
+                                "baseEnergy": 9155
+                            },
+                            {
+                                "name": "Tsuni",
+                                "rarity": "Mythical",
+                                "baseEnergy": 12207
+                            },
+                            {
+                                "name": "Itechi",
+                                "rarity": "Phantom",
+                                "baseEnergy": 36621
+                            },
+                            {
+                                "name": "Madera",
+                                "rarity": "Phantom",
+                                "baseEnergy": 40283
+                            }
+                        ]
+                    },
+                    {
+                        "id": 9,
+                        "name": "Spirit Residence",
+                        "avatars": [
+                            {
+                                "name": "Ken",
+                                "rarity": "Common",
+                                "baseEnergy": 4578
+                            },
+                            {
+                                "name": "Aira",
+                                "rarity": "Uncommon",
+                                "baseEnergy": 9155
+                            },
+                            {
+                                "name": "Jiji",
+                                "rarity": "Rare",
+                                "baseEnergy": 13733
+                            },
+                            {
+                                "name": "Momo",
+                                "rarity": "Epic",
+                                "baseEnergy": 18311
+                            },
+                            {
+                                "name": "Alien",
+                                "rarity": "Legendary",
+                                "baseEnergy": 22888
+                            },
+                            {
+                                "name": "Saiko",
+                                "rarity": "Mythical",
+                                "baseEnergy": 30518
+                            },
+                            {
+                                "name": "Ken Turbo",
+                                "rarity": "Phantom",
+                                "baseEnergy": 91553
+                            }
+                        ]
+                    },
+                    {
+                        "id": 10,
+                        "name": "Magic Hunter City",
+                        "avatars": [
+                            {
+                                "name": "Lero",
+                                "rarity": "Common",
+                                "baseEnergy": 11444
+                            },
+                            {
+                                "name": "Gone",
+                                "rarity": "Uncommon",
+                                "baseEnergy": 22888
+                            },
+                            {
+                                "name": "Karapik",
+                                "rarity": "Rare",
+                                "baseEnergy": 34332
+                            },
+                            {
+                                "name": "Killas",
+                                "rarity": "Epic",
+                                "baseEnergy": 45776
+                            },
+                            {
+                                "name": "Hisoker",
+                                "rarity": "Legendary",
+                                "baseEnergy": 57220
+                            },
+                            {
+                                "name": "Illumio",
+                                "rarity": "Mythical",
+                                "baseEnergy": 76294
+                            },
+                            {
+                                "name": "Killas Godspeed",
+                                "rarity": "Phantom",
+                                "baseEnergy": 228882
+                            }
+                        ]
+                    },
+                    {
+                        "id": 11,
+                        "name": "Titan City",
+                        "avatars": [
+                            {
+                                "name": "Armin",
+                                "rarity": "Common",
+                                "baseEnergy": 28610
+                            },
+                            {
+                                "name": "Annie",
+                                "rarity": "Uncommon",
+                                "baseEnergy": 57220
+                            },
+                            {
+                                "name": "Mikala",
+                                "rarity": "Rare",
+                                "baseEnergy": 85830
+                            },
+                            {
+                                "name": "Rainar",
+                                "rarity": "Epic",
+                                "baseEnergy": 114441
+                            },
+                            {
+                                "name": "Ervin",
+                                "rarity": "Legendary",
+                                "baseEnergy": 143051
+                            },
+                            {
+                                "name": "Lavi",
+                                "rarity": "Mythical",
+                                "baseEnergy": 190735
+                            },
+                            {
+                                "name": "Eran",
+                                "rarity": "Phantom",
+                                "baseEnergy": 575000
+                            }
+                        ]
+                    },
+                    {
+                        "id": 12,
+                        "name": "Sin City",
+                        "avatars": [
+                            {
+                                "name": "Diyana",
+                                "rarity": "Common",
+                                "baseEnergy": 71526
+                            },
+                            {
+                                "name": "Kyng",
+                                "rarity": "Uncommon",
+                                "baseEnergy": 143051
+                            },
+                            {
+                                "name": "Gowen",
+                                "rarity": "Rare",
+                                "baseEnergy": 214577
+                            },
+                            {
+                                "name": "Merlu",
+                                "rarity": "Epic",
+                                "baseEnergy": 286102
+                            },
+                            {
+                                "name": "Bane",
+                                "rarity": "Legendary",
+                                "baseEnergy": 357628
+                            },
+                            {
+                                "name": "Melyon",
+                                "rarity": "Mythical",
+                                "baseEnergy": 476837
+                            },
+                            {
+                                "name": "Escanor",
+                                "rarity": "Phantom",
+                                "baseEnergy": 1437500
+                            }
+                        ]
+                    },
+                    {
+                        "id": 13,
+                        "name": "Kaiju Base",
+                        "avatars": [
+                            {
+                                "name": "Kefka",
+                                "rarity": "Common",
+                                "baseEnergy": 178814
+                            },
+                            {
+                                "name": "Rano",
+                                "rarity": "Uncommon",
+                                "baseEnergy": 357628
+                            },
+                            {
+                                "name": "Ihero",
+                                "rarity": "Rare",
+                                "baseEnergy": 536442
+                            },
+                            {
+                                "name": "Kikoi",
+                                "rarity": "Epic",
+                                "baseEnergy": 715256
+                            },
+                            {
+                                "name": "Sosiro",
+                                "rarity": "Legendary",
+                                "baseEnergy": 894070
+                            },
+                            {
+                                "name": "Meena",
+                                "rarity": "Mythical",
+                                "baseEnergy": 1192093
+                            },
+                            {
+                                "name": "Number 8",
+                                "rarity": "Phantom",
+                                "baseEnergy": 3593750
+                            }
+                        ]
+                    }
+                ]
+            }
         },
         {
             "id": "auras",
@@ -585,7 +1282,7 @@
             "icon": "sparkles",
             "color": "from-pink-500 to-rose-600",
             "href": "/auras",
-            "enabled": true
+            "enabled": false
         },
         {
             "id": "weapons",
@@ -594,7 +1291,16 @@
             "icon": "sword",
             "color": "from-orange-500 to-red-600",
             "href": "/weapons",
-            "enabled": true
+            "enabled": false
+        },
+        {
+            "id": "level",
+            "title": "Leveling",
+            "description": "Leveling system",
+            "icon": "level",
+            "color": "from-green-500 to-blue-600",
+            "href": "/level",
+            "enabled": false
         }
     ]
 }
