@@ -239,7 +239,7 @@ function RouteComponent() {
                         <div key={worldName} className="space-y-4">
                             <div className="flex items-center gap-3">
                                 <Globe className="h-5 w-5 text-blue-600" />
-                                <h2 className="text-xl font-bold text-white">{worldName}</h2>
+                                <h2 className="text-xl font-bold text-gray-200">{worldName}</h2>
                                 <span className="text-sm font-semibold text-gray-200">
                                     ({worldAvatars.length} avatar{worldAvatars.length !== 1 ? "s" : ""})
                                 </span>
@@ -250,7 +250,12 @@ function RouteComponent() {
                                         <TooltipProvider key={`${avatar.worldName}-${avatar.name}-${index}`}>
                                             <Tooltip>
                                                 <TooltipTrigger asChild>
-                                                    <Card className="group cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-lg border-2 hover:border-opacity-50 bg-card">
+                                                    <Card
+                                                        className="group cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-lg border-2 hover:border-opacity-50 relative overflow-hidden"
+                                                        style={{
+                                                            background: `linear-gradient(135deg, ${getRarityStyle(avatar.rarity).background}15, ${getRarityStyle(avatar.rarity).background}25)`,
+                                                            borderColor: getRarityStyle(avatar.rarity).background,
+                                                        }}>
                                                         <CardHeader className="pb-2">
                                                             <div className="flex items-center justify-between">
                                                                 <div className="flex items-center space-x-3">
@@ -262,7 +267,7 @@ function RouteComponent() {
                                                                         </div>
                                                                     </Avatar>
                                                                     <div>
-                                                                        <CardTitle className="text-sm font-semibold text-foreground">
+                                                                        <CardTitle className="text-sm font-bold text-gray-200">
                                                                             {avatar.name}
                                                                         </CardTitle>
                                                                         <p className="text-xs text-muted-foreground font-medium">
@@ -279,11 +284,16 @@ function RouteComponent() {
                                                             </div>
                                                         </CardHeader>
                                                         <CardContent className="pt-0">
-                                                            <div className="flex items-center justify-between bg-muted/50 rounded-md px-3 py-2">
-                                                                <span className="text-xs font-medium text-muted-foreground">
+                                                            <div
+                                                                className="flex items-center justify-between rounded-md px-3 py-2 backdrop-blur-sm"
+                                                                style={{
+                                                                    background: `${getRarityStyle(avatar.rarity).background}20`,
+                                                                    border: `1px solid ${getRarityStyle(avatar.rarity).background}40`,
+                                                                }}>
+                                                                <span className="text-xs font-medium text-gray-200">
                                                                     Base Energy
                                                                 </span>
-                                                                <span className="font-bold text-sm text-foreground">
+                                                                <span className="font-bold text-sm text-gray-200">
                                                                     {formatNumber(avatar.baseEnergy)}
                                                                 </span>
                                                             </div>
