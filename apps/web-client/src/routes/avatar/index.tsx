@@ -20,7 +20,7 @@ import {
 } from "@anime-eternal-wiki/ui";
 import { cn } from "@anime-eternal-wiki/utils";
 import { createFileRoute } from "@tanstack/react-router";
-import { Globe, Search, X } from "lucide-react";
+import { Globe, Search, User, X } from "lucide-react";
 import { useMemo, useState } from "react";
 import { useAvatarData } from "../../hooks/useAvatarData";
 import { RARITY_COLORS, RARITY_ORDER } from "../../types/avatar";
@@ -104,12 +104,19 @@ function RouteComponent() {
 
     return (
         <div className="container mx-auto px-4 py-8 space-y-6">
-            {/* Header */}
-            <div className="space-y-2">
-                <h1 className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
-                    Avatar Collection
-                </h1>
-                <p className="text-muted-foreground">Discover all avatars across different worlds and rarities</p>
+            {/* Hero Section */}
+            <div className="text-center mb-16">
+                <div className="relative inline-block mb-6">
+                    <User className="w-20 h-20 mx-auto text-blue-400" />
+                    <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-full blur opacity-20 animate-pulse"></div>
+                </div>
+                <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">Avatar Collection</h1>
+                <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+                    Discover all avatars across different worlds and rarities
+                </p>
+                <Badge variant="secondary" className="text-sm bg-yellow-500/20 text-yellow-200 border-yellow-500/30">
+                    {filteredAvatars.length} Total Avatars
+                </Badge>
             </div>
 
             {/* Filter Bar */}
