@@ -134,6 +134,88 @@ function RouteComponent() {
                 </Badge>
             </div>
 
+            {/* Avatar Upgrade Information */}
+            <div className="mb-12">
+                <Card className="bg-gradient-to-br from-blue-900/40 to-cyan-900/40 border-blue-500/30 backdrop-blur-sm">
+                    <CardHeader>
+                        <CardTitle className="text-2xl font-bold text-blue-200 flex items-center gap-3">
+                            <div className="p-2 bg-blue-500/20 rounded-lg">
+                                <User className="h-6 w-6 text-blue-400" />
+                            </div>
+                            Avatar Upgrade System
+                        </CardTitle>
+                    </CardHeader>
+                    <CardContent className="space-y-6">
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                            {/* Upgrade Cost */}
+                            <div className="bg-green-500/10 border border-green-500/30 rounded-lg p-4">
+                                <div className="flex items-center gap-2 mb-3">
+                                    <div className="h-3 w-3 bg-green-500 rounded-full"></div>
+                                    <h3 className="font-semibold text-green-200">Total Upgrade Cost</h3>
+                                </div>
+                                <p className="text-2xl font-bold text-white mb-1">
+                                    {formatNumber(avatarModule?.data?.totalUpgradeCost || 0)} Souls
+                                </p>
+                                <p className="text-sm text-gray-300">To reach level 150 (max)</p>
+                            </div>
+
+                            {/* Maximum Bonus */}
+                            <div className="bg-purple-500/10 border border-purple-500/30 rounded-lg p-4">
+                                <div className="flex items-center gap-2 mb-3">
+                                    <div className="h-3 w-3 bg-purple-500 rounded-full"></div>
+                                    <h3 className="font-semibold text-purple-200">Maximum Bonus</h3>
+                                </div>
+                                <p className="text-2xl font-bold text-white mb-1">
+                                    +{upgradeData.find((u) => u.level === 150)?.energyBonus || "750%"}
+                                </p>
+                                <p className="text-sm text-gray-300">Energy boost at max level</p>
+                            </div>
+
+                            {/* Common Milestones */}
+                            <div className="bg-yellow-500/10 border border-yellow-500/30 rounded-lg p-4">
+                                <div className="flex items-center gap-2 mb-3">
+                                    <div className="h-3 w-3 bg-yellow-500 rounded-full"></div>
+                                    <h3 className="font-semibold text-yellow-200">Key Milestones</h3>
+                                </div>
+                                <div className="space-y-1">
+                                    <p className="text-sm text-gray-200">
+                                        Level 100: <span className="text-white font-semibold">+500%</span>
+                                    </p>
+                                    <p className="text-sm text-gray-200">
+                                        Level 150: <span className="text-white font-semibold">+750%</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="bg-blue-500/10 border border-blue-500/30 rounded-lg p-4">
+                            <h3 className="font-semibold text-blue-200 mb-3">How Avatar Upgrades Work</h3>
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-gray-300">
+                                <div>
+                                    <p className="mb-2">
+                                        <strong className="text-white">Cost:</strong> Each level requires Avatar Souls
+                                    </p>
+                                    <p className="mb-2">
+                                        <strong className="text-white">Benefit:</strong> Increases avatar's energy
+                                        output percentage
+                                    </p>
+                                </div>
+                                <div>
+                                    <p className="mb-2">
+                                        <strong className="text-white">Progression:</strong> Linear increase of 5% per
+                                        level (1-100)
+                                    </p>
+                                    <p className="mb-2">
+                                        <strong className="text-white">Advanced:</strong> Slower progression after level
+                                        100
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </CardContent>
+                </Card>
+            </div>
+
             {/* Filter Bar */}
             <div className="space-y-4">
                 <div className="flex flex-col sm:flex-row gap-4">
